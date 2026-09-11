@@ -221,27 +221,35 @@ def render_index():
 
     month_leaves = ""
     for i, m in enumerate(MONTHS):
-        place = m["hotspots"][0]
+        pins, notes = hotspots_html(m["hotspots"])
         grid_rows = build_grid(m["days"], m["firstWeekday"])
+        chain = chain_html(m["chain"])
         month_leaves += f"""
     <div class="flip-page" id="{m['key']}" data-index="{i + 1}" style="z-index:{total - i - 1};">
       <div class="book-spread">
         <div class="book-left">
           <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}" loading="lazy">
+          {pins}
         </div>
         <div class="book-right" style="--accent:{m['season']};">
-          <p class="feed-month-label">{m['name'].upper()} 2027</p>
-          <p class="joke-setup">{m['setup']}</p>
-          <p class="joke-punch">{m['punch']}</p>
-          <div class="book-explain">
-            <h3>{place['title']}</h3>
-            <p>{place['text']}</p>
+          <div class="book-card">
+            <p class="joke-setup">{m['setup']}</p>
+            <p class="joke-punch">{m['punch']}</p>
+            <div class="book-card-divider"></div>
+            <p class="grid-month"><b>{m['name']}</b> 2027</p>
+            <table class="cal">
+              <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+              <tbody>{grid_rows}</tbody>
+            </table>
           </div>
-          <table class="book-mini-cal">
-            <caption>{m['name']} 2027</caption>
-            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
-            <tbody>{grid_rows}</tbody>
-          </table>
+          <div class="book-card">
+            <div class="panel-head">
+              <h2>{m['location']}</h2>
+              <span class="tag-badge">{m['tag']}</span>
+            </div>
+            <div class="chain">{chain}</div>
+            <div class="note-list">{notes}</div>
+          </div>
         </div>
       </div>
     </div>"""
