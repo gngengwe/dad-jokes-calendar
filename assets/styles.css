@@ -76,7 +76,7 @@ img{ max-width:100%; }
 .hero p{ font-size:1rem; line-height:1.65; color:var(--ink-soft); max-width:48ch; }
 .hero .cta{
   display:inline-block; margin-top:1rem; margin-right:0.6rem; font-family:'Archivo'; font-weight:600; font-size:0.85rem;
-  background:var(--brass); color:#26160A; padding:0.6rem 1.1rem; border-radius:999px;
+  background:var(--brass); color:#170C05; padding:0.6rem 1.1rem; border-radius:999px;
 }
 .hero .cta:hover{ text-decoration:none; filter:brightness(1.05); }
 .hero .cta.secondary{
@@ -111,8 +111,8 @@ img{ max-width:100%; }
 
 .pin{
   position:absolute; width:28px; height:28px; margin:-14px 0 0 -14px;
-  border-radius:50%; border:2px solid #26160A;
-  background:var(--accent); color:#26160A; font-family:'Archivo'; font-weight:700; font-size:0.82rem;
+  border-radius:50%; border:2px solid #170C05;
+  background:var(--accent); color:#170C05; font-family:'Archivo'; font-weight:700; font-size:0.82rem;
   display:flex; align-items:center; justify-content:center; cursor:pointer;
   box-shadow:0 2px 8px rgba(0,0,0,0.35); padding:0;
 }
@@ -132,7 +132,7 @@ img{ max-width:100%; }
 .grid-month{ font-family:'Archivo'; font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.6rem; color:var(--ink-soft); }
 .grid-month b{ color:var(--brass-ink); }
 table.cal{ width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
-table.cal th{ font-size:0.64rem; font-weight:600; color:var(--ink-soft); padding-bottom:5px; }
+table.cal th{ font-size:0.72rem; font-weight:700; color:var(--ink); padding-bottom:5px; }
 table.cal td{ text-align:center; font-size:0.82rem; padding:4px 0; color:var(--ink); }
 table.cal td.empty{ color:transparent; }
 
@@ -156,7 +156,7 @@ table.cal td.empty{ color:transparent; }
 }
 .note.hi{ border-color:var(--rust); box-shadow:0 0 0 2px color-mix(in srgb, var(--rust) 22%, transparent); }
 .note-num{
-  flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#26160A;
+  flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#170C05;
   font-family:'Archivo'; font-weight:700; font-size:0.78rem; display:flex; align-items:center; justify-content:center;
 }
 .note h3{ font-size:0.96rem; font-weight:700; margin-bottom:0.25rem; }
