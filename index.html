@@ -4,187 +4,301 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Midwest Deadpan</title>
-<meta name="description" content="A 2027 Kansas City dad-joke calendar — twelve illustrated scenes where the joke leads and Kansas City completes it.">
+<meta name="description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
 <link rel="canonical" href="https://dad-jokes-calendar.pages.dev/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Midwest Deadpan">
-<meta property="og:description" content="A 2027 Kansas City dad-joke calendar — twelve illustrated scenes where the joke leads and Kansas City completes it.">
+<meta property="og:description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
 <meta property="og:image" content="https://dad-jokes-calendar.pages.dev/assets/images/cover_hero.jpg">
 <meta property="og:url" content="https://dad-jokes-calendar.pages.dev/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Midwest Deadpan">
-<meta name="twitter:description" content="A 2027 Kansas City dad-joke calendar — twelve illustrated scenes where the joke leads and Kansas City completes it.">
+<meta name="twitter:description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
 <meta name="twitter:image" content="https://dad-jokes-calendar.pages.dev/assets/images/cover_hero.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="feed-body">
+<body class="flip-body">
 <div class="wrap">
 <header class="site-header">
   <a class="wordmark" href="/">Midwest <em>Deadpan</em></a>
-  <nav><a href="/">The year</a> &nbsp;·&nbsp; <a href="/flipbook">Flipbook</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
+  <nav><a href="/archived">Archived</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
 </header>
 
-<div class="feed-progress"><div class="feed-progress-fill" id="feedProgressFill"></div></div>
-<div class="feed-scroller" tabindex="0" role="region" aria-label="2027 calendar, month by month, press Page Down to advance">
-  <section class="feed-page feed-cover" id="cover" data-label="Cover" aria-label="Cover">
-    <div class="feed-illus">
-      <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
-      <div class="feed-scrim"></div>
+<div class="book-wrap">
+  <div class="book-stage" id="bookStage">
+    <div class="flip-page" id="cover" data-index="0" style="z-index:13;">
+      <div class="book-cover">
+        <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
+        <div class="book-cover-scrim"></div>
+        <div class="book-cover-copy">
+          <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
+          <h1>Midwest Deadpan</h1>
+          <p class="book-cover-hint">Turn the page to begin &rarr;</p>
+        </div>
+      </div>
     </div>
-    <div class="feed-cover-copy">
-      <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
-      <h1>The joke leads.<br>Kansas City completes it.</h1>
-      <p class="feed-sub">Twelve illustrated scenes where dad-joke logic occasionally becomes physically true. Scroll to start the year.</p>
+    <div class="flip-page" id="jan" data-index="1" style="z-index:12;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/jan_hero.jpg" alt="January 2027 illustration — Union Station" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#5D7B93;">
+          <p class="feed-month-label">JANUARY 2027</p>
+          <p class="joke-setup">I used to work at a calendar factory.</p>
+          <p class="joke-punch">I got fired for taking a couple of days off.</p>
+          <div class="book-explain">
+            <h3>The Grand Hall clock</h3>
+            <p>Union Station opened in 1914 as one of the largest train stations in the country. Its four-faced clock has anchored the Grand Hall for over a century — saved from demolition by a 1996 bi-state sales-tax vote.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>January 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr><tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr><tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr><tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr><tr><td>31</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-scrolldown" aria-hidden="true">Scroll <span>&darr;</span></div>
-  </section>
-  <section class="feed-page" id="jan" data-label="Jan" aria-label="January 2027 — Union Station" style="--accent:#5D7B93;">
-    <div class="feed-illus">
-      <img src="/assets/images/jan_hero.jpg" alt="January 2027 illustration — Union Station" loading="lazy">
+    <div class="flip-page" id="feb" data-index="2" style="z-index:11;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/feb_hero.jpg" alt="February 2027 illustration — Country Club Plaza" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#7B3B49;">
+          <p class="feed-month-label">FEBRUARY 2027</p>
+          <p class="joke-setup">I told my wife she should embrace her mistakes.</p>
+          <p class="joke-punch">She gave me a hug.</p>
+          <div class="book-explain">
+            <h3>Country Club Plaza</h3>
+            <p>Opened in 1923 as the nation's first shopping district built around the automobile, modeled on Seville, Spain — the wrought-iron balconies and tile roofs are a direct homage.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>February 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr><tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr><tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr><tr><td>28</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">JANUARY 2027</h2>
-      <p class="joke-setup">I used to work at a calendar factory.</p>
-      <p class="joke-punch">I got fired for taking a couple of days off.</p>
-      <a class="feed-more" href="/jan">Union Station &rarr;</a>
+    <div class="flip-page" id="mar" data-index="3" style="z-index:10;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/mar_hero.jpg" alt="March 2027 illustration — Kansas City International" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#A8A79C;">
+          <p class="feed-month-label">MARCH 2027</p>
+          <p class="joke-setup">Why did the basketball player get stopped at the airport?</p>
+          <p class="joke-punch">He was traveling.</p>
+          <div class="book-explain">
+            <h3>KCI's new terminal</h3>
+            <p>Kansas City International replaced its original 1972 circular terminals with a single $1.5B terminal in 2023 — the sweeping curved roofline behind this scene is the real building.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>March 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr><tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr><tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr><tr><td>28</td><td>29</td><td>30</td><td>31</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="feed-page" id="feb" data-label="Feb" aria-label="February 2027 — Country Club Plaza" style="--accent:#7B3B49;">
-    <div class="feed-illus">
-      <img src="/assets/images/feb_hero.jpg" alt="February 2027 illustration — Country Club Plaza" loading="lazy">
+    <div class="flip-page" id="apr" data-index="4" style="z-index:9;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/apr_hero.jpg" alt="April 2027 illustration — J.C. Nichols Memorial Fountain" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#7A9178;">
+          <p class="feed-month-label">APRIL 2027</p>
+          <p class="joke-setup">If April showers bring May flowers,</p>
+          <p class="joke-punch">what do May flowers bring? Pilgrims.</p>
+          <div class="book-explain">
+            <h3>J.C. Nichols Memorial Fountain</h3>
+            <p>Kansas City has more fountains than any city but Rome — this bronze equestrian fountain on the Plaza is one of its most photographed.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>April 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr><tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">FEBRUARY 2027</h2>
-      <p class="joke-setup">I told my wife she should embrace her mistakes.</p>
-      <p class="joke-punch">She gave me a hug.</p>
-      <a class="feed-more" href="/feb">Country Club Plaza &rarr;</a>
+    <div class="flip-page" id="may" data-index="5" style="z-index:8;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/may_hero.jpg" alt="May 2027 illustration — Loose Park" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#5F8850;">
+          <p class="feed-month-label">MAY 2027</p>
+          <p class="joke-setup">Why did the scarecrow win an award?</p>
+          <p class="joke-punch">Because he was outstanding in his field.</p>
+          <div class="book-explain">
+            <h3>Loose Park's rose garden</h3>
+            <p>Named for Jacob Loose of the Sunshine Biscuit company, the park's formal rose garden holds over 5,000 bushes and is a certified All-America Rose Selections display garden.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>May 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td></tr><tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr><tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr><tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr><tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr><tr><td>30</td><td>31</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="feed-page" id="mar" data-label="Mar" aria-label="March 2027 — Kansas City International" style="--accent:#A8A79C;">
-    <div class="feed-illus">
-      <img src="/assets/images/mar_hero.jpg" alt="March 2027 illustration — Kansas City International" loading="lazy">
+    <div class="flip-page" id="jun" data-index="6" style="z-index:7;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/jun_hero.jpg" alt="June 2027 illustration — Swope Memorial Golf Course" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#2F5A3C;">
+          <p class="feed-month-label">JUNE 2027</p>
+          <p class="joke-setup">Why did the golfer bring two pairs of pants?</p>
+          <p class="joke-punch">In case he got a hole in one.</p>
+          <div class="book-explain">
+            <h3>Swope Memorial Golf Course</h3>
+            <p>A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — it hosted a PGA Tour Champions event in the 1990s.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>June 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr><tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr><tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">MARCH 2027</h2>
-      <p class="joke-setup">Why did the basketball player get stopped at the airport?</p>
-      <p class="joke-punch">He was traveling.</p>
-      <a class="feed-more" href="/mar">Kansas City International &rarr;</a>
+    <div class="flip-page" id="jul" data-index="7" style="z-index:6;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/jul_hero.jpg" alt="July 2027 illustration — Liberty Memorial" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#8CACC7;">
+          <p class="feed-month-label">JULY 2027</p>
+          <p class="joke-setup">What did one flag say to the other?</p>
+          <p class="joke-punch">Nothing. It just waved.</p>
+          <div class="book-explain">
+            <h3>Liberty Memorial</h3>
+            <p>The 217-foot tower has stood over Kansas City's skyline since 1926, marking the National WWI Museum — the United States' official museum dedicated to World War I.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>July 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr><tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="feed-page" id="apr" data-label="Apr" aria-label="April 2027 — J.C. Nichols Memorial Fountain" style="--accent:#7A9178;">
-    <div class="feed-illus">
-      <img src="/assets/images/apr_hero.jpg" alt="April 2027 illustration — J.C. Nichols Memorial Fountain" loading="lazy">
+    <div class="flip-page" id="aug" data-index="8" style="z-index:5;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/aug_hero.jpg" alt="August 2027 illustration — Kauffman Center" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#D4B23A;">
+          <p class="feed-month-label">AUGUST 2027</p>
+          <p class="joke-setup">Why did the music teacher need a ladder?</p>
+          <p class="joke-punch">To reach the high notes.</p>
+          <div class="book-explain">
+            <h3>Kauffman Center for the Performing Arts</h3>
+            <p>Moshe Safdie's two shell-like vaults opened in 2011 — the larger houses a 1,600-seat concert hall, the smaller an 1,800-seat performance hall.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>August 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr><tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr><tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr><tr><td>29</td><td>30</td><td>31</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">APRIL 2027</h2>
-      <p class="joke-setup">If April showers bring May flowers,</p>
-      <p class="joke-punch">what do May flowers bring? Pilgrims.</p>
-      <a class="feed-more" href="/apr">J.C. Nichols Memorial Fountain &rarr;</a>
+    <div class="flip-page" id="sep" data-index="9" style="z-index:4;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/sep_hero.jpg" alt="September 2027 illustration — A KC Bank" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#9A4A1E;">
+          <p class="feed-month-label">SEPTEMBER 2027</p>
+          <p class="joke-setup">Why did the football coach go to the bank?</p>
+          <p class="joke-punch">To get his quarter back.</p>
+          <div class="book-explain">
+            <h3>An old-fashioned KC bank</h3>
+            <p>KC football spirit shows only through the coach's red quarter-zip and whistle — no team names, logos, or wordmarks appear anywhere in the piece.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>September 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr><tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr><tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="feed-page" id="may" data-label="May" aria-label="May 2027 — Loose Park" style="--accent:#5F8850;">
-    <div class="feed-illus">
-      <img src="/assets/images/may_hero.jpg" alt="May 2027 illustration — Loose Park" loading="lazy">
+    <div class="flip-page" id="oct" data-index="10" style="z-index:3;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/oct_hero.jpg" alt="October 2027 illustration — KC Barbecue Joint" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#6B3524;">
+          <p class="feed-month-label">OCTOBER 2027</p>
+          <p class="joke-setup">Why did the skeleton go to the barbecue?</p>
+          <p class="joke-punch">He needed some spare ribs.</p>
+          <div class="book-explain">
+            <h3>The smoker</h3>
+            <p>Kansas City is one of the most decorated barbecue cities in the country — over 100 joints, and home to the American Royal World Series of Barbecue. That's a real offset smoker through the pass window.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>October 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr><tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr><tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr><tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr><tr><td>31</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">MAY 2027</h2>
-      <p class="joke-setup">Why did the scarecrow win an award?</p>
-      <p class="joke-punch">Because he was outstanding in his field.</p>
-      <a class="feed-more" href="/may">Loose Park &rarr;</a>
+    <div class="flip-page" id="nov" data-index="11" style="z-index:2;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/nov_hero.jpg" alt="November 2027 illustration — 18th & Vine Jazz District" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#B8752A;">
+          <p class="feed-month-label">NOVEMBER 2027</p>
+          <p class="joke-setup">Why did the turkey join the band?</p>
+          <p class="joke-punch">Because it had the drumsticks.</p>
+          <div class="book-explain">
+            <h3>18th & Vine</h3>
+            <p>Birthplace of the Kansas City jazz sound in the 1920s–30s, and the former stomping ground of Charlie Parker and Count Basie. Today it's home to the American Jazz Museum and the Negro Leagues Baseball Museum.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>November 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr><tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr><tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr><tr><td>28</td><td>29</td><td>30</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="feed-page" id="jun" data-label="Jun" aria-label="June 2027 — Swope Memorial Golf Course" style="--accent:#2F5A3C;">
-    <div class="feed-illus">
-      <img src="/assets/images/jun_hero.jpg" alt="June 2027 illustration — Swope Memorial Golf Course" loading="lazy">
+    <div class="flip-page" id="dec" data-index="12" style="z-index:1;">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/dec_hero.jpg" alt="December 2027 illustration — Plaza Lights" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:#1F2B45;">
+          <p class="feed-month-label">DECEMBER 2027</p>
+          <p class="joke-setup">I love holiday lights.</p>
+          <p class="joke-punch">They really brighten my spirits — and my electric bill.</p>
+          <div class="book-explain">
+            <h3>The Plaza Lights</h3>
+            <p>The Plaza Lights have illuminated Kansas City every winter since 1925 — over 80 miles of bulbs strung along the rooflines each November.</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>December 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody><tr><td class="empty">&middot;</td><td class="empty">&middot;</td><td class="empty">&middot;</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr><tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr><tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="empty">&middot;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">JUNE 2027</h2>
-      <p class="joke-setup">Why did the golfer bring two pairs of pants?</p>
-      <p class="joke-punch">In case he got a hole in one.</p>
-      <a class="feed-more" href="/jun">Swope Memorial Golf Course &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="jul" data-label="Jul" aria-label="July 2027 — Liberty Memorial" style="--accent:#8CACC7;">
-    <div class="feed-illus">
-      <img src="/assets/images/jul_hero.jpg" alt="July 2027 illustration — Liberty Memorial" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">JULY 2027</h2>
-      <p class="joke-setup">What did one flag say to the other?</p>
-      <p class="joke-punch">Nothing. It just waved.</p>
-      <a class="feed-more" href="/jul">Liberty Memorial &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="aug" data-label="Aug" aria-label="August 2027 — Kauffman Center" style="--accent:#D4B23A;">
-    <div class="feed-illus">
-      <img src="/assets/images/aug_hero.jpg" alt="August 2027 illustration — Kauffman Center" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">AUGUST 2027</h2>
-      <p class="joke-setup">Why did the music teacher need a ladder?</p>
-      <p class="joke-punch">To reach the high notes.</p>
-      <a class="feed-more" href="/aug">Kauffman Center &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="sep" data-label="Sep" aria-label="September 2027 — A KC Bank" style="--accent:#9A4A1E;">
-    <div class="feed-illus">
-      <img src="/assets/images/sep_hero.jpg" alt="September 2027 illustration — A KC Bank" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">SEPTEMBER 2027</h2>
-      <p class="joke-setup">Why did the football coach go to the bank?</p>
-      <p class="joke-punch">To get his quarter back.</p>
-      <a class="feed-more" href="/sep">A KC Bank &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="oct" data-label="Oct" aria-label="October 2027 — KC Barbecue Joint" style="--accent:#6B3524;">
-    <div class="feed-illus">
-      <img src="/assets/images/oct_hero.jpg" alt="October 2027 illustration — KC Barbecue Joint" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">OCTOBER 2027</h2>
-      <p class="joke-setup">Why did the skeleton go to the barbecue?</p>
-      <p class="joke-punch">He needed some spare ribs.</p>
-      <a class="feed-more" href="/oct">KC Barbecue Joint &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="nov" data-label="Nov" aria-label="November 2027 — 18th & Vine Jazz District" style="--accent:#B8752A;">
-    <div class="feed-illus">
-      <img src="/assets/images/nov_hero.jpg" alt="November 2027 illustration — 18th & Vine Jazz District" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">NOVEMBER 2027</h2>
-      <p class="joke-setup">Why did the turkey join the band?</p>
-      <p class="joke-punch">Because it had the drumsticks.</p>
-      <a class="feed-more" href="/nov">18th & Vine Jazz District &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page" id="dec" data-label="Dec" aria-label="December 2027 — Plaza Lights" style="--accent:#1F2B45;">
-    <div class="feed-illus">
-      <img src="/assets/images/dec_hero.jpg" alt="December 2027 illustration — Plaza Lights" loading="lazy">
-    </div>
-    <div class="feed-info">
-      <h2 class="feed-month-label">DECEMBER 2027</h2>
-      <p class="joke-setup">I love holiday lights.</p>
-      <p class="joke-punch">They really brighten my spirits — and my electric bill.</p>
-      <a class="feed-more" href="/dec">Plaza Lights &rarr;</a>
-    </div>
-  </section>
-  <section class="feed-page feed-end" id="end" aria-label="End of the year">
-    <div class="feed-end-copy">
-      <p class="feed-eyebrow">That's the year</p>
-      <h2>Twelve months, one Kansas City.</h2>
-      <a class="cta" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
-      <a class="cta secondary" href="#cover">Back to the cover &uarr;</a>
-    </div>
-  </section>
+  </div>
+  <button class="book-nav prev" id="bookPrev" aria-label="Previous page">&larr;</button>
+  <button class="book-nav next" id="bookNext" aria-label="Next page">&rarr;</button>
 </div>
-<div class="feed-dots"><button data-target="cover" aria-label="Jump to cover"></button><button data-target="jan" aria-label="Jump to January"></button><button data-target="feb" aria-label="Jump to February"></button><button data-target="mar" aria-label="Jump to March"></button><button data-target="apr" aria-label="Jump to April"></button><button data-target="may" aria-label="Jump to May"></button><button data-target="jun" aria-label="Jump to June"></button><button data-target="jul" aria-label="Jump to July"></button><button data-target="aug" aria-label="Jump to August"></button><button data-target="sep" aria-label="Jump to September"></button><button data-target="oct" aria-label="Jump to October"></button><button data-target="nov" aria-label="Jump to November"></button><button data-target="dec" aria-label="Jump to December"></button><button data-target="end" aria-label="Jump to end"></button></div>
-<script>window.__FEED_SECTIONS__ = ["cover", "jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec", "end"];</script>
-<script src="/assets/feed.js"></script>
+<p class="book-progress"><span id="bookPageNum">1</span> / 13</p>
+<script>window.__BOOK_SECTIONS__ = ["cover", "jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];</script>
+<script src="/assets/flipbook.js"></script>
 </div>
 </body>
 </html>

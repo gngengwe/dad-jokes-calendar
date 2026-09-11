@@ -9,6 +9,15 @@
   var total = pages.length;
   var current = 0;
 
+  // Deep link support: /#nov opens straight to that spread (no flip
+  // animation on load -- transitions are suppressed for the first paint).
+  var sections = window.__BOOK_SECTIONS__ || [];
+  var hashTarget = sections.indexOf(location.hash.slice(1));
+  if (hashTarget > -1) {
+    current = hashTarget;
+    stage.classList.add('no-anim');
+  }
+
   function render() {
     pages.forEach(function (page) {
       var idx = Number(page.dataset.index);
@@ -39,4 +48,9 @@
   });
 
   render();
+  if (stage.classList.contains('no-anim')) {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { stage.classList.remove('no-anim'); });
+    });
+  }
 })();
