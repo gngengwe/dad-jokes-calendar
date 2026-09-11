@@ -188,9 +188,22 @@ html:has(.feed-body){ height:100%; }
   margin-bottom:0;
 }
 
+.feed-progress{
+  position:fixed; top:0; left:0; right:0; height:3px; z-index:31;
+  background:color-mix(in srgb, var(--line) 70%, transparent);
+}
+.feed-progress-fill{
+  height:100%; width:0%; background:var(--brass); transition:width 0.25s ease;
+}
+
 .feed-scroller{
   height:100vh; height:100svh; overflow-y:scroll; scroll-snap-type:y mandatory;
   -webkit-overflow-scrolling:touch;
+}
+.feed-scroller:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; }
+@media (prefers-reduced-motion: reduce){
+  .feed-scroller{ scroll-snap-type:y proximity; }
+  .feed-page{ scroll-snap-stop:normal; }
 }
 .feed-page{
   height:100vh; height:100svh; scroll-snap-align:start; scroll-snap-stop:always;

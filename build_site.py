@@ -40,8 +40,8 @@ HEAD = """<!doctype html>
 <body class="{body_class}">
 <div class="wrap">
 <header class="site-header">
-  <a class="wordmark" href="/">Midwest <em>Deadpan</em></a>
-  <nav><a href="/">The year</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
+  <a class="wordmark" href="{home_href}">Midwest <em>Deadpan</em></a>
+  <nav><a href="{home_href}">The year</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
 </header>
 """
 
@@ -107,6 +107,7 @@ def render_month(m, prev_m, next_m):
         slug=m["key"],
         og_image=f"assets/images/{m['key']}_hero.jpg",
         body_class="",
+        home_href=f"/#{m['key']}",
     )
     html += f"""
 <div class="stage" style="--accent:{m['season']};">
@@ -138,7 +139,7 @@ def render_month(m, prev_m, next_m):
 </div>
 <div class="month-nav">
   {prev_link}
-  <a class="to-year" href="/">All 12 months</a>
+  <a class="to-year" href="/#{m['key']}">All 12 months</a>
   {next_link}
 </div>
 """
@@ -161,6 +162,7 @@ def render_cover():
         slug="cover",
         og_image="assets/images/cover_hero.jpg",
         body_class="",
+        home_href="/",
     )
     html += f"""
 <div class="stage">
@@ -198,10 +200,11 @@ def render_index():
         slug="",
         og_image="assets/images/cover_hero.jpg",
         body_class="feed-body",
+        home_href="/",
     )
 
     cover_section = f"""
-  <section class="feed-page feed-cover" id="cover" data-label="Cover">
+  <section class="feed-page feed-cover" id="cover" data-label="Cover" aria-label="Cover">
     <div class="feed-illus">
       <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
       <div class="feed-scrim"></div>
@@ -217,12 +220,12 @@ def render_index():
     month_sections = ""
     for m in MONTHS:
         month_sections += f"""
-  <section class="feed-page" id="{m['key']}" data-label="{m['name'][:3]}" style="--accent:{m['season']};">
+  <section class="feed-page" id="{m['key']}" data-label="{m['name'][:3]}" aria-label="{m['name']} 2027 — {m['location']}" style="--accent:{m['season']};">
     <div class="feed-illus">
       <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}" loading="lazy">
     </div>
     <div class="feed-info">
-      <p class="feed-month-label">{m['name'].upper()} 2027</p>
+      <h2 class="feed-month-label">{m['name'].upper()} 2027</h2>
       <p class="joke-setup">{m['setup']}</p>
       <p class="joke-punch">{m['punch']}</p>
       <a class="feed-more" href="/{m['key']}">{m['location']} &rarr;</a>
@@ -230,7 +233,7 @@ def render_index():
   </section>"""
 
     end_section = """
-  <section class="feed-page feed-end" id="end">
+  <section class="feed-page feed-end" id="end" aria-label="End of the year">
     <div class="feed-end-copy">
       <p class="feed-eyebrow">That's the year</p>
       <h2>Twelve months, one Kansas City.</h2>
@@ -244,10 +247,14 @@ def render_index():
         for sid, label in [("cover", "cover")] + [(m["key"], m["name"]) for m in MONTHS] + [("end", "end")]
     )
 
+    section_ids = ["cover"] + [m["key"] for m in MONTHS] + ["end"]
+
     html += f"""
-<div class="feed-scroller">{cover_section}{month_sections}{end_section}
+<div class="feed-progress"><div class="feed-progress-fill" id="feedProgressFill"></div></div>
+<div class="feed-scroller" tabindex="0" role="region" aria-label="2027 calendar, month by month, press Page Down to advance">{cover_section}{month_sections}{end_section}
 </div>
 <div class="feed-dots">{dots}</div>
+<script>window.__FEED_SECTIONS__ = {json.dumps(section_ids)};</script>
 <script src="/assets/feed.js"></script>
 </div>
 </body>
@@ -266,6 +273,7 @@ def render_404():
         slug="404.html",
         og_image="assets/images/cover_hero.jpg",
         body_class="",
+        home_href="/",
     )
     html += """
 <div class="hero">
