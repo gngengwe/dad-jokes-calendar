@@ -1,0 +1,154 @@
+{
+  "months": [
+    {
+      "key": "jan", "name": "January", "order": 1, "days": 31, "firstWeekday": 5,
+      "location": "Union Station", "tag": "Level 1–2 · Setting & Completion",
+      "setup": "I used to work at a calendar factory.",
+      "punch": "I got fired for taking a couple of days off.",
+      "chain": ["Calendar factory", "Days off", "Time", "Union Station clock"],
+      "season": "#5D7B93", "seasonName": "Winter blue + amber",
+      "hotspots": [
+        {"x": 72, "y": 30, "kind": "Place", "title": "The Grand Hall clock", "text": "Union Station opened in 1914 as one of the largest train stations in the country. Its four-faced clock has anchored the Grand Hall for over a century — saved from demolition by a 1996 bi-state sales-tax vote."},
+        {"x": 44, "y": 54, "kind": "Joke", "title": "The days off", "text": "He's holding the removed dates like ordinary paper — a dad literally carrying the punchline, with the station's own clock keeping the time logic honest behind him."}
+      ]
+    },
+    {
+      "key": "feb", "name": "February", "order": 2, "days": 28, "firstWeekday": 1,
+      "location": "Country Club Plaza", "tag": "Level 1 · Setting",
+      "setup": "I told my wife she should embrace her mistakes.",
+      "punch": "She gave me a hug.",
+      "chain": ["Mistakes", "Embrace", "Hug"],
+      "season": "#7B3B49", "seasonName": "Burgundy + cream + evening gold",
+      "hotspots": [
+        {"x": 25, "y": 20, "kind": "Place", "title": "Country Club Plaza", "text": "Opened in 1923 as the nation's first shopping district built around the automobile, modeled on Seville, Spain — the wrought-iron balconies and tile roofs are a direct homage."},
+        {"x": 46, "y": 32, "kind": "Joke", "title": "The eyebrow", "text": "A genuine, warm embrace — with the smallest flicker of ‘wait, what did I do?’ in his expression. That's the entire joke."}
+      ]
+    },
+    {
+      "key": "mar", "name": "March", "order": 3, "days": 31, "firstWeekday": 1,
+      "location": "Kansas City International", "tag": "Level 3 · Convergence",
+      "setup": "Why did the basketball player get stopped at the airport?",
+      "punch": "He was traveling.",
+      "chain": ["Basketball", "Traveling violation", "Actual travel", "KCI"],
+      "season": "#8C9A93", "seasonName": "Cool neutrals + early spring",
+      "hotspots": [
+        {"x": 50, "y": 16, "kind": "Place", "title": "KCI's new terminal", "text": "Kansas City International replaced its original 1972 circular terminals with a single $1.5B terminal in 2023 — the sweeping curved roofline behind this scene is the real building."},
+        {"x": 30, "y": 36, "kind": "Joke", "title": "The call", "text": "The referee's raised whistle and pointing arm do the work a caption would otherwise have to do — the gag reads before you've noticed the joke is a pun on “traveling.”"}
+      ]
+    },
+    {
+      "key": "apr", "name": "April", "order": 4, "days": 30, "firstWeekday": 4,
+      "location": "J.C. Nichols Memorial Fountain", "tag": "Level 2 · Completion",
+      "setup": "If April showers bring May flowers,",
+      "punch": "what do May flowers bring? Pilgrims.",
+      "chain": ["April showers", "May flowers", "Mayflower", "Pilgrims"],
+      "season": "#7A9178", "seasonName": "Rain gray + fresh green",
+      "hotspots": [
+        {"x": 70, "y": 22, "kind": "Place", "title": "J.C. Nichols Memorial Fountain", "text": "Kansas City has more fountains than any city but Rome — this bronze equestrian fountain on the Plaza is one of its most photographed."},
+        {"x": 14, "y": 66, "kind": "Joke", "title": "The travelers", "text": "A small huddle of cloaked travelers with old-fashioned luggage, arriving at the edge of frame — easy to miss on a first look, which is exactly the point."}
+      ]
+    },
+    {
+      "key": "may", "name": "May", "order": 5, "days": 31, "firstWeekday": 6,
+      "location": "Loose Park", "tag": "Level 2 · Completion",
+      "setup": "Why did the scarecrow win an award?",
+      "punch": "Because he was outstanding in his field.",
+      "chain": ["Scarecrow", "Award", "Outstanding in his field"],
+      "season": "#5F8850", "seasonName": "Lush green + flower warmth",
+      "hotspots": [
+        {"x": 75, "y": 30, "kind": "Place", "title": "Loose Park's rose garden", "text": "Named for Jacob Loose of the Sunshine Biscuit company, the park's formal rose garden holds over 5,000 bushes and is a certified All-America Rose Selections display garden."},
+        {"x": 48, "y": 55, "kind": "Joke", "title": "The ceremony", "text": "A small, entirely sincere award presentation — ribbon, medal, applause. Nobody in the field treats it as anything but an ordinary Tuesday."}
+      ]
+    },
+    {
+      "key": "jun", "name": "June", "order": 6, "days": 30, "firstWeekday": 2,
+      "location": "Swope Memorial Golf Course", "tag": "Level 2 · Completion",
+      "setup": "Why did the golfer bring two pairs of pants?",
+      "punch": "In case he got a hole in one.",
+      "chain": ["Golfer", "Extra pants", "Hole in one"],
+      "season": "#3E6B4A", "seasonName": "Deep summer green + morning gold",
+      "hotspots": [
+        {"x": 68, "y": 22, "kind": "Place", "title": "Swope Memorial Golf Course", "text": "A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — it hosted a PGA Tour Champions event in the 1990s."},
+        {"x": 14, "y": 62, "kind": "Joke", "title": "The spare pants", "text": "Folded into the bag's side pocket like any other piece of gear. Nobody comments on it — which is the whole joke."}
+      ]
+    },
+    {
+      "key": "jul", "name": "July", "order": 7, "days": 31, "firstWeekday": 4,
+      "location": "Liberty Memorial", "tag": "Level 1 · Setting",
+      "setup": "What did one flag say to the other?",
+      "punch": "Nothing. It just waved.",
+      "chain": ["Flag", "Wave", "Nothing"],
+      "season": "#6E8FB0", "seasonName": "Warm sky + restrained Americana",
+      "hotspots": [
+        {"x": 72, "y": 25, "kind": "Place", "title": "Liberty Memorial", "text": "The 217-foot tower has stood over Kansas City's skyline since 1926, marking the National WWI Museum — the United States' official museum dedicated to World War I."},
+        {"x": 40, "y": 30, "kind": "Joke", "title": "The conversation", "text": "The wind just happens to fold two flags toward each other. Nothing about them is drawn as a character — it's purely a trick of the gust."}
+      ]
+    },
+    {
+      "key": "aug", "name": "August", "order": 8, "days": 31, "firstWeekday": 0,
+      "location": "Kauffman Center", "tag": "Level 3 · Convergence",
+      "setup": "Why did the music teacher need a ladder?",
+      "punch": "To reach the high notes.",
+      "chain": ["Music teacher", "High notes", "Ladder"],
+      "season": "#B08A3E", "seasonName": "Late-summer gold + arts neutrals",
+      "hotspots": [
+        {"x": 35, "y": 32, "kind": "Place", "title": "Kauffman Center for the Performing Arts", "text": "Moshe Safdie's two shell-like vaults opened in 2011 — the larger houses a 1,600-seat concert hall, the smaller an 1,800-seat performance hall."},
+        {"x": 68, "y": 28, "kind": "Joke", "title": "The ladder", "text": "No floating musical notes anywhere in the piece — the ladder does all the work the pun needs."}
+      ]
+    },
+    {
+      "key": "sep", "name": "September", "order": 9, "days": 30, "firstWeekday": 3,
+      "location": "A KC Bank", "tag": "Level 3 · Convergence",
+      "setup": "Why did the football coach go to the bank?",
+      "punch": "To get his quarter back.",
+      "chain": ["Coach", "Quarter", "Quarter back"],
+      "season": "#A15A2E", "seasonName": "Early autumn + football warmth",
+      "hotspots": [
+        {"x": 20, "y": 16, "kind": "Place", "title": "An old-fashioned KC bank", "text": "KC football spirit shows only through the coach's red quarter-zip and whistle — no team names, logos, or wordmarks appear anywhere in the piece."},
+        {"x": 55, "y": 42, "kind": "Joke", "title": "The quarter", "text": "The teller hands over a literal quarter, completely deadpan, like any ordinary transaction across the counter."}
+      ]
+    },
+    {
+      "key": "oct", "name": "October", "order": 10, "days": 31, "firstWeekday": 5,
+      "location": "KC Barbecue Joint", "tag": "Level 3 · Convergence",
+      "setup": "Why did the skeleton go to the barbecue?",
+      "punch": "He needed some spare ribs.",
+      "chain": ["Skeleton", "Ribs", "Spare ribs (pun)", "KC barbecue"],
+      "season": "#7A3B26", "seasonName": "Charcoal + rust + barbecue warmth",
+      "hotspots": [
+        {"x": 82, "y": 22, "kind": "Place", "title": "The smoker", "text": "Kansas City is one of the most decorated barbecue cities in the country — over 100 joints, and home to the American Royal World Series of Barbecue. That's a real offset smoker through the pass window."},
+        {"x": 48, "y": 63, "kind": "Joke", "title": "Spare ribs", "text": "He's test-fitting a rib into the actual gap in his own ribcage — the pun made literal, and nobody at the table finds it worth a second look."}
+      ]
+    },
+    {
+      "key": "nov", "name": "November", "order": 11, "days": 30, "firstWeekday": 1,
+      "location": "18th & Vine Jazz District", "tag": "Level 3 · Convergence — the ceiling",
+      "setup": "Why did the turkey join the band?",
+      "punch": "Because it had the drumsticks.",
+      "chain": ["Turkey", "Drumsticks", "Music", "Jazz", "18th & Vine"],
+      "season": "#B8752A", "seasonName": "Tobacco brown + amber + jazz-club warmth",
+      "hotspots": [
+        {"x": 80, "y": 18, "kind": "Place", "title": "18th & Vine", "text": "Birthplace of the Kansas City jazz sound in the 1920s–30s, and the former stomping ground of Charlie Parker and Count Basie. Today it's home to the American Jazz Museum and the Negro Leagues Baseball Museum."},
+        {"x": 58, "y": 58, "kind": "Joke", "title": "The drummer", "text": "Nobody in the trio treats the turkey as remarkable — that restraint is the whole joke. The feather beside the dropped drum brush at his feet is the one easter egg this page allows itself."}
+      ]
+    },
+    {
+      "key": "dec", "name": "December", "order": 12, "days": 31, "firstWeekday": 3,
+      "location": "Plaza Lights", "tag": "Level 1 · Setting",
+      "setup": "I love holiday lights.",
+      "punch": "They really brighten my spirits — and my electric bill.",
+      "chain": ["Lights", "Brighten", "Electric bill"],
+      "season": "#2E3B5C", "seasonName": "Deep blue + incandescent gold",
+      "hotspots": [
+        {"x": 50, "y": 15, "kind": "Place", "title": "The Plaza Lights", "text": "The Plaza Lights have illuminated Kansas City every winter since 1925 — over 80 miles of bulbs strung along the rooflines each November."},
+        {"x": 26, "y": 55, "kind": "Joke", "title": "The bill", "text": "Everyone else looks up in wonder; Dad's eyes are on the bill in his hand. Nobody else in the scene notices where he's looking."}
+      ]
+    }
+  ],
+  "cover": {
+    "notes": [
+      {"kind": "Cast", "title": "The lineup", "text": "Every recurring character, dressed for a formal group photo on Union Station's steps — each matching their established design from their own interior page."},
+      {"kind": "Cast", "title": "Nobody reacts", "text": "That's the entire cover joke: a turkey, a skeleton, a referee, and a dad, standing for a dignified portrait like it's the most ordinary thing in the world."}
+    ]
+  }
+}
