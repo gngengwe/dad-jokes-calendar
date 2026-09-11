@@ -8,6 +8,11 @@ with open(os.path.join(BASE, "data", "months.json"), encoding="utf-8") as f:
 MONTHS = DATA["months"]
 COVER_NOTES = DATA["cover"]["notes"]
 
+# TODO: switch to https://dadjokes.ngengwe.com once its DNS record is added
+# (Wrangler token can't write DNS -- see project notes). Keep this in sync
+# with the live custom domain once that's resolved.
+SITE_URL = "https://dad-jokes-calendar.pages.dev"
+
 FONT_LINK = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&display=swap">'
 
 HEAD = """<!doctype html>
@@ -17,21 +22,33 @@ HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
+<link rel="canonical" href="{site_url}/{slug}">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:image" content="{site_url}/{og_image}">
+<meta property="og:url" content="{site_url}/{slug}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{description}">
+<meta name="twitter:image" content="{site_url}/{og_image}">
 {font_link}
-<link rel="stylesheet" href="{root}assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
 <div class="wrap">
 <header class="site-header">
-  <a class="wordmark" href="{root}index.html">Midwest <em>Deadpan</em></a>
-  <nav><a href="{root}index.html">The year</a> &nbsp;·&nbsp; <a href="{root}cover.html">Cover</a></nav>
+  <a class="wordmark" href="/">Midwest <em>Deadpan</em></a>
+  <nav><a href="/">The year</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
 </header>
 """
 
 FOOT = """
-<footer class="site-footer">Midwest Deadpan — Dad Jokes &times; Kansas City, 2027. One illustration, one joke, one real Kansas City place. &nbsp;&middot;&nbsp; <a href="{root}assets/Midwest_Deadpan_2027_Calendar.pdf">Print-ready PDF</a></footer>
+<footer class="site-footer">Midwest Deadpan — Dad Jokes &times; Kansas City, 2027. One illustration, one joke, one real Kansas City place. &nbsp;&middot;&nbsp; <a href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Print-ready PDF</a></footer>
 </div>
-<script src="{root}assets/site.js"></script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
 """
@@ -79,20 +96,22 @@ def render_month(m, prev_m, next_m):
     grid_rows = build_grid(m["days"], m["firstWeekday"])
     chain = chain_html(m["chain"])
 
-    prev_link = f'<a href="{prev_m["key"]}.html"><span>&larr; Previous</span>{prev_m["name"]}</a>' if prev_m else '<span></span>'
-    next_link = f'<a href="{next_m["key"]}.html"><span>Next &rarr;</span>{next_m["name"]}</a>' if next_m else '<span></span>'
+    prev_link = f'<a href="/{prev_m["key"]}"><span>&larr; Previous</span>{prev_m["name"]}</a>' if prev_m else '<span></span>'
+    next_link = f'<a href="/{next_m["key"]}"><span>Next &rarr;</span>{next_m["name"]}</a>' if next_m else '<span></span>'
 
     html = HEAD.format(
         title=f'{m["name"]} 2027 — {m["location"]} | Midwest Deadpan',
         description=f'{m["setup"]} {m["punch"]} — {m["name"]} at {m["location"]}, Kansas City.',
         font_link=FONT_LINK,
-        root="",
+        site_url=SITE_URL,
+        slug=m["key"],
+        og_image=f"assets/images/{m['key']}_hero.jpg",
     )
     html += f"""
 <div class="stage" style="--accent:{m['season']};">
   <div class="page-card">
     <div class="illus">
-      <img src="assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
+      <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
       {pins}
     </div>
     <div class="joke-band">
@@ -118,11 +137,11 @@ def render_month(m, prev_m, next_m):
 </div>
 <div class="month-nav">
   {prev_link}
-  <a class="to-year" href="index.html">All 12 months</a>
+  <a class="to-year" href="/">All 12 months</a>
   {next_link}
 </div>
 """
-    html += FOOT.format(root="")
+    html += FOOT
     with open(os.path.join(BASE, f"{m['key']}.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -137,13 +156,15 @@ def render_cover():
         title="The Cover | Midwest Deadpan",
         description="The ensemble cast of the 2027 Midwest Deadpan calendar, gathered on Union Station's steps.",
         font_link=FONT_LINK,
-        root="",
+        site_url=SITE_URL,
+        slug="cover",
+        og_image="assets/images/cover_hero.jpg",
     )
     html += f"""
 <div class="stage">
   <div class="page-card">
     <div class="illus">
-      <img src="assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
+      <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
     </div>
   </div>
   <div class="panel">
@@ -157,11 +178,11 @@ def render_cover():
 </div>
 <div class="month-nav">
   <span></span>
-  <a class="to-year" href="index.html">All 12 months</a>
+  <a class="to-year" href="/">All 12 months</a>
   <span></span>
 </div>
 """
-    html += FOOT.format(root="")
+    html += FOOT
     with open(os.path.join(BASE, "cover.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -170,8 +191,8 @@ def render_index():
     cards = ""
     for m in MONTHS:
         cards += f"""
-    <a class="month-card" href="{m['key']}.html">
-      <img src="assets/images/{m['key']}_thumb.jpg" alt="{m['name']} thumbnail">
+    <a class="month-card" href="/{m['key']}">
+      <img src="/assets/images/{m['key']}_thumb.jpg" alt="{m['name']} thumbnail">
       <div class="mc-body">
         <div class="mc-name"><span class="mc-dot" style="background:{m['season']};"></span>{m['name']}</div>
         <div class="mc-punch">{m['punch']}</div>
@@ -182,25 +203,59 @@ def render_index():
         title="Midwest Deadpan",
         description="A 2027 Kansas City dad-joke calendar — twelve illustrated scenes where the joke leads and Kansas City completes it.",
         font_link=FONT_LINK,
-        root="",
+        site_url=SITE_URL,
+        slug="",
+        og_image="assets/images/cover_hero.jpg",
     )
     html += f"""
 <div class="hero">
-  <a href="cover.html"><img src="assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast"></a>
+  <a href="/cover"><img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast"></a>
   <div>
     <h1>The joke leads. Kansas City completes it.</h1>
     <p>Twelve illustrated scenes of ordinary Midwestern life in a slightly illogical Kansas City, where dad-joke logic occasionally becomes physically true. Beautiful first, funny second — every page rewards a second look.</p>
-    <a class="cta" href="{MONTHS[0]['key']}.html">Start with January &rarr;</a>
-    <a class="cta secondary" href="assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
+    <a class="cta" href="/{MONTHS[0]['key']}">Start with January &rarr;</a>
+    <a class="cta secondary" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
   </div>
 </div>
 <p class="year-label">The year</p>
 <div class="month-grid">{cards}
 </div>
 """
-    html += FOOT.format(root="")
+    html += FOOT
     with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
+
+
+def render_404():
+    html = HEAD.format(
+        title="Page Not Found | Midwest Deadpan",
+        description="That page doesn't exist. Browse the 2027 Midwest Deadpan calendar instead.",
+        font_link=FONT_LINK,
+        site_url=SITE_URL,
+        slug="404.html",
+        og_image="assets/images/cover_hero.jpg",
+    )
+    html += """
+<div class="hero">
+  <a href="/cover"><img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast"></a>
+  <div>
+    <h1>That page took a wrong turn.</h1>
+    <p>There's no month here. Head back to the year, or start with January.</p>
+    <a class="cta" href="/">Back to the year &rarr;</a>
+  </div>
+</div>
+"""
+    html += FOOT
+    with open(os.path.join(BASE, "404.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def render_sitemap():
+    urls = [""] + [m["key"] for m in MONTHS] + ["cover"]
+    entries = "\n".join(f"  <url><loc>{SITE_URL}/{u}</loc></url>" for u in urls)
+    xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}\n</urlset>\n'
+    with open(os.path.join(BASE, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
 
 
 def main():
@@ -210,7 +265,9 @@ def main():
         render_month(m, prev_m, next_m)
     render_cover()
     render_index()
-    print(f"Built {len(MONTHS)} month pages + cover + index.")
+    render_404()
+    render_sitemap()
+    print(f"Built {len(MONTHS)} month pages + cover + index + 404 + sitemap.")
 
 
 if __name__ == "__main__":
