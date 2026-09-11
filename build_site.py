@@ -29,7 +29,7 @@ HEAD = """<!doctype html>
 """
 
 FOOT = """
-<footer class="site-footer">Midwest Deadpan — Dad Jokes &times; Kansas City, 2027. One illustration, one joke, one real Kansas City place.</footer>
+<footer class="site-footer">Midwest Deadpan — Dad Jokes &times; Kansas City, 2027. One illustration, one joke, one real Kansas City place. &nbsp;&middot;&nbsp; <a href="{root}assets/Midwest_Deadpan_2027_Calendar.pdf">Print-ready PDF</a></footer>
 </div>
 <script src="{root}assets/site.js"></script>
 </body>
@@ -191,6 +191,7 @@ def render_index():
     <h1>The joke leads. Kansas City completes it.</h1>
     <p>Twelve illustrated scenes of ordinary Midwestern life in a slightly illogical Kansas City, where dad-joke logic occasionally becomes physically true. Beautiful first, funny second — every page rewards a second look.</p>
     <a class="cta" href="{MONTHS[0]['key']}.html">Start with January &rarr;</a>
+    <a class="cta secondary" href="assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
   </div>
 </div>
 <p class="year-label">The year</p>
