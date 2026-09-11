@@ -37,7 +37,7 @@ HEAD = """<!doctype html>
 {font_link}
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
+<body class="{body_class}">
 <div class="wrap">
 <header class="site-header">
   <a class="wordmark" href="/">Midwest <em>Deadpan</em></a>
@@ -106,6 +106,7 @@ def render_month(m, prev_m, next_m):
         site_url=SITE_URL,
         slug=m["key"],
         og_image=f"assets/images/{m['key']}_hero.jpg",
+        body_class="",
     )
     html += f"""
 <div class="stage" style="--accent:{m['season']};">
@@ -159,6 +160,7 @@ def render_cover():
         site_url=SITE_URL,
         slug="cover",
         og_image="assets/images/cover_hero.jpg",
+        body_class="",
     )
     html += f"""
 <div class="stage">
@@ -188,17 +190,6 @@ def render_cover():
 
 
 def render_index():
-    cards = ""
-    for m in MONTHS:
-        cards += f"""
-    <a class="month-card" href="/{m['key']}">
-      <img src="/assets/images/{m['key']}_thumb.jpg" alt="{m['name']} thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:{m['season']};"></span>{m['name']}</div>
-        <div class="mc-punch">{m['punch']}</div>
-      </div>
-    </a>"""
-
     html = HEAD.format(
         title="Midwest Deadpan",
         description="A 2027 Kansas City dad-joke calendar — twelve illustrated scenes where the joke leads and Kansas City completes it.",
@@ -206,22 +197,62 @@ def render_index():
         site_url=SITE_URL,
         slug="",
         og_image="assets/images/cover_hero.jpg",
+        body_class="feed-body",
     )
+
+    cover_section = f"""
+  <section class="feed-page feed-cover" id="cover" data-label="Cover">
+    <div class="feed-illus">
+      <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
+      <div class="feed-scrim"></div>
+    </div>
+    <div class="feed-cover-copy">
+      <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
+      <h1>The joke leads.<br>Kansas City completes it.</h1>
+      <p class="feed-sub">Twelve illustrated scenes where dad-joke logic occasionally becomes physically true. Scroll to start the year.</p>
+    </div>
+    <div class="feed-scrolldown" aria-hidden="true">Scroll <span>&darr;</span></div>
+  </section>"""
+
+    month_sections = ""
+    for m in MONTHS:
+        month_sections += f"""
+  <section class="feed-page" id="{m['key']}" data-label="{m['name'][:3]}" style="--accent:{m['season']};">
+    <div class="feed-illus">
+      <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">{m['name'].upper()} 2027</p>
+      <p class="joke-setup">{m['setup']}</p>
+      <p class="joke-punch">{m['punch']}</p>
+      <a class="feed-more" href="/{m['key']}">{m['location']} &rarr;</a>
+    </div>
+  </section>"""
+
+    end_section = """
+  <section class="feed-page feed-end" id="end">
+    <div class="feed-end-copy">
+      <p class="feed-eyebrow">That's the year</p>
+      <h2>Twelve months, one Kansas City.</h2>
+      <a class="cta" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
+      <a class="cta secondary" href="#cover">Back to the cover &uarr;</a>
+    </div>
+  </section>"""
+
+    dots = "".join(
+        f'<button data-target="{sid}" aria-label="Jump to {label}"></button>'
+        for sid, label in [("cover", "cover")] + [(m["key"], m["name"]) for m in MONTHS] + [("end", "end")]
+    )
+
     html += f"""
-<div class="hero">
-  <a href="/cover"><img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast"></a>
-  <div>
-    <h1>The joke leads. Kansas City completes it.</h1>
-    <p>Twelve illustrated scenes of ordinary Midwestern life in a slightly illogical Kansas City, where dad-joke logic occasionally becomes physically true. Beautiful first, funny second — every page rewards a second look.</p>
-    <a class="cta" href="/{MONTHS[0]['key']}">Start with January &rarr;</a>
-    <a class="cta secondary" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
-  </div>
+<div class="feed-scroller">{cover_section}{month_sections}{end_section}
 </div>
-<p class="year-label">The year</p>
-<div class="month-grid">{cards}
+<div class="feed-dots">{dots}</div>
+<script src="/assets/feed.js"></script>
 </div>
+</body>
+</html>
 """
-    html += FOOT
     with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -234,6 +265,7 @@ def render_404():
         site_url=SITE_URL,
         slug="404.html",
         og_image="assets/images/cover_hero.jpg",
+        body_class="",
     )
     html += """
 <div class="hero">

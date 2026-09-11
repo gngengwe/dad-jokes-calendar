@@ -20,112 +20,169 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
+<body class="feed-body">
 <div class="wrap">
 <header class="site-header">
   <a class="wordmark" href="/">Midwest <em>Deadpan</em></a>
   <nav><a href="/">The year</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
 </header>
 
-<div class="hero">
-  <a href="/cover"><img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast"></a>
-  <div>
-    <h1>The joke leads. Kansas City completes it.</h1>
-    <p>Twelve illustrated scenes of ordinary Midwestern life in a slightly illogical Kansas City, where dad-joke logic occasionally becomes physically true. Beautiful first, funny second — every page rewards a second look.</p>
-    <a class="cta" href="/jan">Start with January &rarr;</a>
-    <a class="cta secondary" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
-  </div>
+<div class="feed-scroller">
+  <section class="feed-page feed-cover" id="cover" data-label="Cover">
+    <div class="feed-illus">
+      <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
+      <div class="feed-scrim"></div>
+    </div>
+    <div class="feed-cover-copy">
+      <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
+      <h1>The joke leads.<br>Kansas City completes it.</h1>
+      <p class="feed-sub">Twelve illustrated scenes where dad-joke logic occasionally becomes physically true. Scroll to start the year.</p>
+    </div>
+    <div class="feed-scrolldown" aria-hidden="true">Scroll <span>&darr;</span></div>
+  </section>
+  <section class="feed-page" id="jan" data-label="Jan" style="--accent:#5D7B93;">
+    <div class="feed-illus">
+      <img src="/assets/images/jan_hero.jpg" alt="January 2027 illustration — Union Station" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">JANUARY 2027</p>
+      <p class="joke-setup">I used to work at a calendar factory.</p>
+      <p class="joke-punch">I got fired for taking a couple of days off.</p>
+      <a class="feed-more" href="/jan">Union Station &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="feb" data-label="Feb" style="--accent:#7B3B49;">
+    <div class="feed-illus">
+      <img src="/assets/images/feb_hero.jpg" alt="February 2027 illustration — Country Club Plaza" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">FEBRUARY 2027</p>
+      <p class="joke-setup">I told my wife she should embrace her mistakes.</p>
+      <p class="joke-punch">She gave me a hug.</p>
+      <a class="feed-more" href="/feb">Country Club Plaza &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="mar" data-label="Mar" style="--accent:#A8A79C;">
+    <div class="feed-illus">
+      <img src="/assets/images/mar_hero.jpg" alt="March 2027 illustration — Kansas City International" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">MARCH 2027</p>
+      <p class="joke-setup">Why did the basketball player get stopped at the airport?</p>
+      <p class="joke-punch">He was traveling.</p>
+      <a class="feed-more" href="/mar">Kansas City International &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="apr" data-label="Apr" style="--accent:#7A9178;">
+    <div class="feed-illus">
+      <img src="/assets/images/apr_hero.jpg" alt="April 2027 illustration — J.C. Nichols Memorial Fountain" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">APRIL 2027</p>
+      <p class="joke-setup">If April showers bring May flowers,</p>
+      <p class="joke-punch">what do May flowers bring? Pilgrims.</p>
+      <a class="feed-more" href="/apr">J.C. Nichols Memorial Fountain &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="may" data-label="May" style="--accent:#5F8850;">
+    <div class="feed-illus">
+      <img src="/assets/images/may_hero.jpg" alt="May 2027 illustration — Loose Park" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">MAY 2027</p>
+      <p class="joke-setup">Why did the scarecrow win an award?</p>
+      <p class="joke-punch">Because he was outstanding in his field.</p>
+      <a class="feed-more" href="/may">Loose Park &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="jun" data-label="Jun" style="--accent:#2F5A3C;">
+    <div class="feed-illus">
+      <img src="/assets/images/jun_hero.jpg" alt="June 2027 illustration — Swope Memorial Golf Course" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">JUNE 2027</p>
+      <p class="joke-setup">Why did the golfer bring two pairs of pants?</p>
+      <p class="joke-punch">In case he got a hole in one.</p>
+      <a class="feed-more" href="/jun">Swope Memorial Golf Course &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="jul" data-label="Jul" style="--accent:#8CACC7;">
+    <div class="feed-illus">
+      <img src="/assets/images/jul_hero.jpg" alt="July 2027 illustration — Liberty Memorial" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">JULY 2027</p>
+      <p class="joke-setup">What did one flag say to the other?</p>
+      <p class="joke-punch">Nothing. It just waved.</p>
+      <a class="feed-more" href="/jul">Liberty Memorial &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="aug" data-label="Aug" style="--accent:#D4B23A;">
+    <div class="feed-illus">
+      <img src="/assets/images/aug_hero.jpg" alt="August 2027 illustration — Kauffman Center" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">AUGUST 2027</p>
+      <p class="joke-setup">Why did the music teacher need a ladder?</p>
+      <p class="joke-punch">To reach the high notes.</p>
+      <a class="feed-more" href="/aug">Kauffman Center &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="sep" data-label="Sep" style="--accent:#9A4A1E;">
+    <div class="feed-illus">
+      <img src="/assets/images/sep_hero.jpg" alt="September 2027 illustration — A KC Bank" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">SEPTEMBER 2027</p>
+      <p class="joke-setup">Why did the football coach go to the bank?</p>
+      <p class="joke-punch">To get his quarter back.</p>
+      <a class="feed-more" href="/sep">A KC Bank &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="oct" data-label="Oct" style="--accent:#6B3524;">
+    <div class="feed-illus">
+      <img src="/assets/images/oct_hero.jpg" alt="October 2027 illustration — KC Barbecue Joint" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">OCTOBER 2027</p>
+      <p class="joke-setup">Why did the skeleton go to the barbecue?</p>
+      <p class="joke-punch">He needed some spare ribs.</p>
+      <a class="feed-more" href="/oct">KC Barbecue Joint &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="nov" data-label="Nov" style="--accent:#B8752A;">
+    <div class="feed-illus">
+      <img src="/assets/images/nov_hero.jpg" alt="November 2027 illustration — 18th & Vine Jazz District" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">NOVEMBER 2027</p>
+      <p class="joke-setup">Why did the turkey join the band?</p>
+      <p class="joke-punch">Because it had the drumsticks.</p>
+      <a class="feed-more" href="/nov">18th & Vine Jazz District &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page" id="dec" data-label="Dec" style="--accent:#1F2B45;">
+    <div class="feed-illus">
+      <img src="/assets/images/dec_hero.jpg" alt="December 2027 illustration — Plaza Lights" loading="lazy">
+    </div>
+    <div class="feed-info">
+      <p class="feed-month-label">DECEMBER 2027</p>
+      <p class="joke-setup">I love holiday lights.</p>
+      <p class="joke-punch">They really brighten my spirits — and my electric bill.</p>
+      <a class="feed-more" href="/dec">Plaza Lights &rarr;</a>
+    </div>
+  </section>
+  <section class="feed-page feed-end" id="end">
+    <div class="feed-end-copy">
+      <p class="feed-eyebrow">That's the year</p>
+      <h2>Twelve months, one Kansas City.</h2>
+      <a class="cta" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
+      <a class="cta secondary" href="#cover">Back to the cover &uarr;</a>
+    </div>
+  </section>
 </div>
-<p class="year-label">The year</p>
-<div class="month-grid">
-    <a class="month-card" href="/jan">
-      <img src="/assets/images/jan_thumb.jpg" alt="January thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#5D7B93;"></span>January</div>
-        <div class="mc-punch">I got fired for taking a couple of days off.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/feb">
-      <img src="/assets/images/feb_thumb.jpg" alt="February thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#7B3B49;"></span>February</div>
-        <div class="mc-punch">She gave me a hug.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/mar">
-      <img src="/assets/images/mar_thumb.jpg" alt="March thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#A8A79C;"></span>March</div>
-        <div class="mc-punch">He was traveling.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/apr">
-      <img src="/assets/images/apr_thumb.jpg" alt="April thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#7A9178;"></span>April</div>
-        <div class="mc-punch">what do May flowers bring? Pilgrims.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/may">
-      <img src="/assets/images/may_thumb.jpg" alt="May thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#5F8850;"></span>May</div>
-        <div class="mc-punch">Because he was outstanding in his field.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/jun">
-      <img src="/assets/images/jun_thumb.jpg" alt="June thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#2F5A3C;"></span>June</div>
-        <div class="mc-punch">In case he got a hole in one.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/jul">
-      <img src="/assets/images/jul_thumb.jpg" alt="July thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#8CACC7;"></span>July</div>
-        <div class="mc-punch">Nothing. It just waved.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/aug">
-      <img src="/assets/images/aug_thumb.jpg" alt="August thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#D4B23A;"></span>August</div>
-        <div class="mc-punch">To reach the high notes.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/sep">
-      <img src="/assets/images/sep_thumb.jpg" alt="September thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#9A4A1E;"></span>September</div>
-        <div class="mc-punch">To get his quarter back.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/oct">
-      <img src="/assets/images/oct_thumb.jpg" alt="October thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#6B3524;"></span>October</div>
-        <div class="mc-punch">He needed some spare ribs.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/nov">
-      <img src="/assets/images/nov_thumb.jpg" alt="November thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#B8752A;"></span>November</div>
-        <div class="mc-punch">Because it had the drumsticks.</div>
-      </div>
-    </a>
-    <a class="month-card" href="/dec">
-      <img src="/assets/images/dec_thumb.jpg" alt="December thumbnail">
-      <div class="mc-body">
-        <div class="mc-name"><span class="mc-dot" style="background:#1F2B45;"></span>December</div>
-        <div class="mc-punch">They really brighten my spirits — and my electric bill.</div>
-      </div>
-    </a>
+<div class="feed-dots"><button data-target="cover" aria-label="Jump to cover"></button><button data-target="jan" aria-label="Jump to January"></button><button data-target="feb" aria-label="Jump to February"></button><button data-target="mar" aria-label="Jump to March"></button><button data-target="apr" aria-label="Jump to April"></button><button data-target="may" aria-label="Jump to May"></button><button data-target="jun" aria-label="Jump to June"></button><button data-target="jul" aria-label="Jump to July"></button><button data-target="aug" aria-label="Jump to August"></button><button data-target="sep" aria-label="Jump to September"></button><button data-target="oct" aria-label="Jump to October"></button><button data-target="nov" aria-label="Jump to November"></button><button data-target="dec" aria-label="Jump to December"></button><button data-target="end" aria-label="Jump to end"></button></div>
+<script src="/assets/feed.js"></script>
 </div>
-
-<footer class="site-footer">Midwest Deadpan — Dad Jokes &times; Kansas City, 2027. One illustration, one joke, one real Kansas City place. &nbsp;&middot;&nbsp; <a href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Print-ready PDF</a></footer>
-</div>
-<script src="/assets/site.js"></script>
 </body>
 </html>

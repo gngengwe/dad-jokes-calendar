@@ -173,3 +173,84 @@ table.cal td.empty{ color:transparent; }
 .month-nav .to-year{ font-size:0.82rem; color:var(--ink-soft); }
 
 footer.site-footer{ margin-top:3rem; font-family:'Archivo'; font-size:0.76rem; color:var(--ink-soft); opacity:0.7; }
+
+/* ---------- Feed home page (scroll-snap, cover-first) ---------- */
+html:has(.feed-body){ height:100%; }
+.feed-body{ height:100%; overflow:hidden; }
+.feed-body .wrap{ max-width:none; padding:0; height:100%; }
+
+.feed-body .site-header{
+  position:fixed; top:0; left:0; right:0; z-index:30;
+  background:color-mix(in srgb, var(--paper) 75%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid color-mix(in srgb, var(--line) 55%, transparent);
+  padding:0.85rem clamp(1rem,4vw,2rem);
+  margin-bottom:0;
+}
+
+.feed-scroller{
+  height:100vh; height:100svh; overflow-y:scroll; scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.feed-page{
+  height:100vh; height:100svh; scroll-snap-align:start; scroll-snap-stop:always;
+  display:flex; flex-direction:column; position:relative;
+}
+.feed-illus{ flex:1 1 auto; min-height:0; position:relative; background:var(--paper-raised); }
+.feed-illus img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.feed-info{
+  flex:0 0 auto; padding:1rem clamp(1.1rem,5vw,2.5rem) clamp(1.6rem,5vh,2.4rem);
+  background:var(--paper-raised); border-top:1px solid var(--line);
+}
+.feed-month-label{
+  font-family:'Archivo'; font-size:0.72rem; font-weight:700; letter-spacing:0.12em;
+  color:var(--accent, var(--brass-ink)); margin:0 0 0.4rem;
+}
+.feed-info .joke-setup{ font-size:0.94rem; }
+.feed-info .joke-punch{ font-size:1.18rem; margin-bottom:0.7rem; }
+.feed-more{
+  display:inline-block; font-family:'Archivo'; font-size:0.8rem; font-weight:600;
+  color:var(--brass-ink); border:1px solid var(--line); border-radius:999px; padding:0.4rem 0.85rem;
+}
+.feed-more:hover{ border-color:var(--brass); text-decoration:none; }
+
+.feed-cover .feed-illus{ flex:1 1 auto; }
+.feed-scrim{ position:absolute; inset:auto 0 0 0; height:55%; background:linear-gradient(to top, rgba(10,7,3,0.75), transparent); pointer-events:none; }
+.feed-cover-copy{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:0 clamp(1.2rem,6vw,3rem) clamp(4.5rem,12vh,6rem);
+  color:#F5EAD2;
+}
+.feed-eyebrow{ font-family:'Archivo'; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85; margin-bottom:0.6rem; }
+.feed-cover-copy h1{ font-size:clamp(1.7rem,6vw,2.6rem); font-weight:560; font-style:italic; color:#F5EAD2; text-wrap:balance; margin-bottom:0.8rem; }
+.feed-sub{ font-size:0.94rem; line-height:1.55; max-width:36ch; opacity:0.92; }
+.feed-scrolldown{
+  position:absolute; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:2;
+  font-family:'Archivo'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+  color:#F5EAD2; opacity:0.85; text-align:center;
+}
+.feed-scrolldown span{ display:block; margin-top:0.25rem; animation:feedBounce 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce){ .feed-scrolldown span{ animation:none; } }
+@keyframes feedBounce{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(5px);} }
+
+.feed-end{ align-items:center; justify-content:center; background:var(--paper-raised); }
+.feed-end-copy{ text-align:center; max-width:32ch; padding:0 1.5rem; }
+.feed-end-copy h2{ font-size:1.5rem; font-weight:560; font-style:italic; margin:0.5rem 0 1.4rem; }
+.feed-end-copy .cta{
+  display:inline-block; margin:0.3rem; font-family:'Archivo'; font-weight:600; font-size:0.85rem;
+  background:var(--brass); color:#170C05; padding:0.6rem 1.1rem; border-radius:999px;
+}
+.feed-end-copy .cta.secondary{ background:none; border:1px solid var(--line); color:var(--ink-soft); }
+.feed-end-copy .cta:hover{ text-decoration:none; filter:brightness(1.05); }
+
+.feed-dots{
+  position:fixed; right:clamp(8px,2vw,16px); top:50%; transform:translateY(-50%); z-index:30;
+  display:flex; flex-direction:column; gap:7px;
+}
+.feed-dots button{
+  width:6px; height:6px; border-radius:50%; background:var(--line); border:none; padding:0;
+  cursor:pointer; transition:all 0.2s ease;
+}
+.feed-dots button.active{ background:var(--brass); width:9px; height:9px; }
+@media (max-width:600px){ .feed-dots{ display:none; } }
