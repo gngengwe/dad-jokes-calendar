@@ -211,7 +211,7 @@ html:has(.flip-body){ height:100%; }
 @media (prefers-reduced-motion: reduce){ .flip-page{ transition:transform 0.01ms; } }
 
 .book-cover{ position:relative; width:100%; height:100%; background:var(--paper-raised); }
-.book-cover img{ width:100%; height:100%; object-fit:cover; display:block; }
+.book-cover img{ width:100%; height:100%; object-fit:cover; object-position:50% 8%; display:block; }
 .book-cover-scrim{ position:absolute; inset:0; background:linear-gradient(100deg, rgba(10,7,3,0.72) 0%, rgba(10,7,3,0.15) 55%, transparent 75%); }
 .book-cover-copy{ position:absolute; left:clamp(1.2rem,5vw,3rem); top:50%; transform:translateY(-50%); max-width:20ch; color:#F5EAD2; }
 .book-cover-copy h1{ font-size:clamp(1.6rem,4.5vw,2.6rem); font-weight:560; font-style:italic; color:#F5EAD2; margin:0.5rem 0 1rem; text-wrap:balance; }
