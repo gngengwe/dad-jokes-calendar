@@ -61,10 +61,10 @@ img{ max-width:100%; }
   padding-bottom:1.25rem; margin-bottom:2rem; border-bottom:1px solid var(--line);
 }
 .site-header .wordmark{
-  font-size:1.5rem; font-weight:560; font-style:italic;
-  font-variation-settings:'opsz' 90,'SOFT' 40,'WONK' 1;
+  font-size:1.5rem; font-weight:540; font-style:italic; color:var(--brass-ink);
+  font-variation-settings:'opsz' 90,'SOFT' 15,'WONK' 0;
 }
-.site-header .wordmark em{ color:var(--brass); font-style:italic; }
+.site-header .wordmark em{ font-style:italic; }
 .site-header nav{ font-family:'Archivo'; font-size:0.82rem; color:var(--ink-soft); }
 .site-header nav a{ color:var(--ink-soft); }
 
