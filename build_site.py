@@ -41,7 +41,7 @@ HEAD = """<!doctype html>
 <div class="wrap">
 <header class="site-header">
   <a class="wordmark" href="{home_href}">Midwest <em>Deadpan</em></a>
-  <nav><a href="{home_href}">The year</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
+  <nav><a href="{home_href}">The year</a> &nbsp;·&nbsp; <a href="/flipbook">Flipbook</a> &nbsp;·&nbsp; <a href="/cover">Cover</a></nav>
 </header>
 """
 
@@ -264,6 +264,77 @@ def render_index():
         f.write(html)
 
 
+def render_flipbook():
+    html = HEAD.format(
+        title="The Flipbook | Midwest Deadpan",
+        description="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.",
+        font_link=FONT_LINK,
+        site_url=SITE_URL,
+        slug="flipbook",
+        og_image="assets/images/cover_hero.jpg",
+        body_class="flip-body",
+        home_href="/",
+    )
+
+    total = len(MONTHS) + 1  # cover + 12 months
+
+    cover_leaf = f"""
+    <div class="flip-page" data-index="0" style="z-index:{total};">
+      <div class="book-cover">
+        <img src="/assets/images/cover_hero.jpg" alt="Cover illustration — the ensemble cast on Union Station's steps">
+        <div class="book-cover-scrim"></div>
+        <div class="book-cover-copy">
+          <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
+          <h1>Midwest Deadpan</h1>
+          <p class="book-cover-hint">Turn the page to begin &rarr;</p>
+        </div>
+      </div>
+    </div>"""
+
+    month_leaves = ""
+    for i, m in enumerate(MONTHS):
+        place = m["hotspots"][0]
+        grid_rows = build_grid(m["days"], m["firstWeekday"])
+        month_leaves += f"""
+    <div class="flip-page" data-index="{i + 1}" style="z-index:{total - i - 1};">
+      <div class="book-spread">
+        <div class="book-left">
+          <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}" loading="lazy">
+        </div>
+        <div class="book-right" style="--accent:{m['season']};">
+          <p class="feed-month-label">{m['name'].upper()} 2027</p>
+          <p class="joke-setup">{m['setup']}</p>
+          <p class="joke-punch">{m['punch']}</p>
+          <div class="book-explain">
+            <h3>{place['title']}</h3>
+            <p>{place['text']}</p>
+          </div>
+          <table class="book-mini-cal">
+            <caption>{m['name']} 2027</caption>
+            <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+            <tbody>{grid_rows}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>"""
+
+    html += f"""
+<div class="book-wrap">
+  <div class="book-stage" id="bookStage">{cover_leaf}{month_leaves}
+  </div>
+  <button class="book-nav prev" id="bookPrev" aria-label="Previous page">&larr;</button>
+  <button class="book-nav next" id="bookNext" aria-label="Next page">&rarr;</button>
+</div>
+<p class="book-progress"><span id="bookPageNum">1</span> / {total}</p>
+<script src="/assets/flipbook.js"></script>
+</div>
+</body>
+</html>
+"""
+    with open(os.path.join(BASE, "flipbook.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 def render_404():
     html = HEAD.format(
         title="Page Not Found | Midwest Deadpan",
@@ -291,7 +362,7 @@ def render_404():
 
 
 def render_sitemap():
-    urls = [""] + [m["key"] for m in MONTHS] + ["cover"]
+    urls = [""] + [m["key"] for m in MONTHS] + ["cover", "flipbook"]
     entries = "\n".join(f"  <url><loc>{SITE_URL}/{u}</loc></url>" for u in urls)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}\n</urlset>\n'
     with open(os.path.join(BASE, "sitemap.xml"), "w", encoding="utf-8") as f:
@@ -305,9 +376,10 @@ def main():
         render_month(m, prev_m, next_m)
     render_cover()
     render_index()
+    render_flipbook()
     render_404()
     render_sitemap()
-    print(f"Built {len(MONTHS)} month pages + cover + index + 404 + sitemap.")
+    print(f"Built {len(MONTHS)} month pages + cover + index + flipbook + 404 + sitemap.")
 
 
 if __name__ == "__main__":
