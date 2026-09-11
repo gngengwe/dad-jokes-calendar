@@ -341,6 +341,9 @@ html:has(.flip-body){ height:100%; }
   .book-spread::after{ display:none; }
   .book-mini-cal{ display:none; }
   .book-explain{ display:none; }
+  .book-nav{ top:auto; bottom:0.9rem; transform:none; }
+  .book-nav.prev{ left:0.6rem; }
+  .book-nav.next{ right:0.6rem; }
 }
 
 .book-nav{
