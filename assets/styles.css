@@ -186,17 +186,17 @@ footer.site-footer{ margin-top:3rem; font-family:'Archivo'; font-size:0.76rem; c
 }
 
 /* ---------- Flipbook ---------- */
-html:has(.flip-body){ height:100%; }
+html:has(.flip-body), html:has(.flip-body) body{ height:100%; }
 .flip-body{ height:100%; overflow:hidden; background:var(--paper); }
-.flip-body .wrap{ max-width:none; padding:0; height:100%; }
+.flip-body .wrap{ max-width:none; padding:0; height:100%; display:flex; flex-direction:column; }
 .flip-body .site-header{
   position:relative; z-index:10; background:none; border-bottom:1px solid var(--line);
-  padding:0.85rem clamp(1rem,4vw,2rem); margin-bottom:0;
+  padding:0.85rem clamp(1rem,4vw,2rem); margin-bottom:0; flex:0 0 auto;
 }
 
 .book-wrap{
   position:relative;
-  height:calc(100% - 64px);
+  flex:1 1 auto; min-height:0;
   display:flex; align-items:center; justify-content:center;
   padding:1.5rem clamp(1rem,6vw,4rem);
   perspective:2400px;
@@ -281,6 +281,7 @@ html:has(.flip-body){ height:100%; }
 }
 
 .book-progress{
+  flex:0 0 auto;
   text-align:center; font-family:'Archivo'; font-size:0.76rem; color:var(--ink-soft);
   font-variant-numeric:tabular-nums; padding-bottom:0.75rem;
 }
