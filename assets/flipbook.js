@@ -50,10 +50,41 @@
 
   stage.setAttribute('tabindex', '0');
   stage.addEventListener('click', function (e) {
-    if (e.target.closest('.book-nav')) return;
+    if (e.target.closest('.book-nav') || e.target.closest('.pin') || e.target.closest('.book-right')) return;
     var rect = stage.getBoundingClientRect();
     var x = e.clientX - rect.left;
     if (x > rect.width / 2) next(); else prev();
+  });
+
+  // Each spread has its own pins/notes/reveal button -- wire them per page
+  // rather than globally, since the flipbook holds 12 separate sets in one
+  // document (unlike the single-spread month detail pages).
+  pages.forEach(function (page) {
+    var pagePins = Array.prototype.slice.call(page.querySelectorAll('.pin'));
+    var pageNotes = Array.prototype.slice.call(page.querySelectorAll('.note'));
+    var revealBtn = page.querySelector('.book-reveal-btn');
+    var revealCard = page.querySelector('.book-reveal');
+
+    function reveal() {
+      if (revealCard && revealCard.hidden) {
+        revealCard.hidden = false;
+        if (revealBtn) revealBtn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function highlight(i) {
+      pagePins.forEach(function (p, idx) { p.classList.toggle('hi', idx === i); });
+      pageNotes.forEach(function (n) { n.classList.toggle('hi', Number(n.dataset.idx) === i); });
+    }
+
+    pagePins.forEach(function (pin, i) {
+      pin.addEventListener('click', function (e) { e.stopPropagation(); reveal(); highlight(i); });
+      pin.addEventListener('focus', function () { reveal(); highlight(i); });
+    });
+    pageNotes.forEach(function (note, i) {
+      note.addEventListener('mouseenter', function () { highlight(i); });
+    });
+    if (revealBtn) revealBtn.addEventListener('click', function (e) { e.stopPropagation(); reveal(); });
   });
 
   document.addEventListener('keydown', function (e) {

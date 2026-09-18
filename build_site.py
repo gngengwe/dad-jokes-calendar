@@ -242,7 +242,8 @@ def render_index():
               <tbody>{grid_rows}</tbody>
             </table>
           </div>
-          <div class="book-card">
+          <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
+          <div class="book-card book-reveal" hidden>
             <div class="panel-head">
               <h2>{m['location']}</h2>
               <span class="tag-badge">{m['tag']}</span>
