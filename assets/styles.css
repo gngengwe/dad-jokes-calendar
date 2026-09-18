@@ -202,7 +202,7 @@ html:has(.flip-body){ height:100%; }
   perspective:2400px;
 }
 .book-stage{
-  position:relative; width:100%; max-width:1000px; max-height:100%; aspect-ratio:16/10;
+  position:relative; width:100%; max-width:640px; max-height:100%; aspect-ratio:3/4.5;
   filter:drop-shadow(0 18px 40px rgba(20,14,6,0.35));
 }
 .flip-page{
@@ -222,15 +222,10 @@ html:has(.flip-body){ height:100%; }
 .book-cover-hint{ font-family:'Archivo'; font-size:0.82rem; opacity:0.85; }
 
 .book-spread{
-  display:grid; grid-template-columns:1fr 1fr; width:100%; height:100%;
+  display:grid; grid-template-columns:1fr; grid-template-rows:44% 56%; width:100%; height:100%;
   background:var(--paper-raised); position:relative;
 }
-.book-spread::after{
-  content:''; position:absolute; left:50%; top:0; bottom:0; width:10px; margin-left:-5px;
-  background:linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent);
-  pointer-events:none;
-}
-.book-left{ position:relative; overflow:hidden; }
+.book-left{ position:relative; overflow:hidden; box-shadow:0 2px 6px -2px rgba(20,14,6,0.35); }
 .book-left img{ width:100%; height:100%; object-fit:cover; display:block; }
 .book-left .pin{ position:absolute; }
 
@@ -270,23 +265,19 @@ html:has(.flip-body){ height:100%; }
 .book-card .note p{ font-size:0.82rem; }
 
 .book-nav{
-  position:absolute; top:50%; transform:translateY(-50%); z-index:20;
+  position:absolute; top:auto; bottom:0.9rem; z-index:20;
   width:42px; height:42px; border-radius:50%; border:1px solid var(--line);
   background:color-mix(in srgb, var(--paper-raised) 88%, transparent); backdrop-filter:blur(6px);
   color:var(--ink); font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
 }
 .book-nav:hover{ border-color:var(--brass); }
 .book-nav:disabled{ opacity:0.3; cursor:default; }
-.book-nav.prev{ left:clamp(0.3rem,2vw,1.2rem); }
-.book-nav.next{ right:clamp(0.3rem,2vw,1.2rem); }
+.book-nav.prev{ left:0.6rem; }
+.book-nav.next{ right:0.6rem; }
 
-@media (max-width:760px){
-  .book-stage{ aspect-ratio:3/4.8; }
-  .book-spread{ grid-template-columns:1fr; grid-template-rows:36% 64%; }
-  .book-spread::after{ display:none; }
-  .book-nav{ top:auto; bottom:0.9rem; transform:none; }
-  .book-nav.prev{ left:0.6rem; }
-  .book-nav.next{ right:0.6rem; }
+@media (max-width:480px){
+  .book-stage{ aspect-ratio:3/4.8; max-width:420px; }
+  .book-spread{ grid-template-rows:38% 62%; }
 }
 
 .book-progress{
