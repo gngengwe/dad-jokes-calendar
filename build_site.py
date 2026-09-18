@@ -1,7 +1,15 @@
 import json
 import os
+import time
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+# Cache-busting: assets are served with a 1hr cache (see _headers), but this
+# project deploys many times an hour during active work. Without a version
+# query string, a browser can render fresh HTML against a stale cached CSS/JS
+# pair -- which looks exactly like broken images, unstyled buttons, and
+# layout that doesn't match what was just shipped. Regenerated every build.
+ASSET_V = str(int(time.time()))
 with open(os.path.join(BASE, "data", "months.json"), encoding="utf-8") as f:
     DATA = json.load(f)
 
@@ -52,6 +60,9 @@ FOOT = """
 </body>
 </html>
 """
+
+HEAD = HEAD.replace("/assets/styles.css", f"/assets/styles.css?v={ASSET_V}")
+FOOT = FOOT.replace("/assets/site.js", f"/assets/site.js?v={ASSET_V}")
 
 
 def build_grid(days, first_weekday):
@@ -266,7 +277,7 @@ def render_index():
 </div>
 <p class="book-progress"><span id="bookPageNum">1</span> / {total}</p>
 <script>window.__BOOK_SECTIONS__ = {json.dumps(section_ids)};</script>
-<script src="/assets/flipbook.js"></script>
+<script src="/assets/flipbook.js?v={ASSET_V}"></script>
 </div>
 </body>
 </html>

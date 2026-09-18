@@ -64,11 +64,13 @@
     var pageNotes = Array.prototype.slice.call(page.querySelectorAll('.note'));
     var revealBtn = page.querySelector('.book-reveal-btn');
     var revealCard = page.querySelector('.book-reveal');
+    var rightCol = page.querySelector('.book-right');
 
     function reveal() {
       if (revealCard && revealCard.hidden) {
         revealCard.hidden = false;
         if (revealBtn) revealBtn.setAttribute('aria-expanded', 'true');
+        if (rightCol) rightCol.classList.add('is-revealed');
       }
     }
 
