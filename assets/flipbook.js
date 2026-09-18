@@ -18,6 +18,19 @@
     stage.classList.add('no-anim');
   }
 
+  // On-demand image loading: all 13 pages are stacked in the same screen
+  // rect (that's how the flip effect works), so native loading="lazy"
+  // can't tell most of them are "off-screen" and loads more than it
+  // should. Only fetch the current spread's image plus one on each side.
+  function loadImagesAround(idx) {
+    [idx - 1, idx, idx + 1].forEach(function (i) {
+      var page = pages[i];
+      if (!page) return;
+      var img = page.querySelector('img[data-src]');
+      if (img) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+    });
+  }
+
   function render() {
     pages.forEach(function (page) {
       var idx = Number(page.dataset.index);
@@ -26,6 +39,7 @@
     if (pageNum) pageNum.textContent = current + 1;
     if (prevBtn) prevBtn.disabled = current === 0;
     if (nextBtn) nextBtn.disabled = current === total - 1;
+    loadImagesAround(current);
   }
 
   function next() { if (current < total - 1) { current++; render(); } }
@@ -46,6 +60,25 @@
     if (e.key === 'ArrowRight' || e.key === 'PageDown') { next(); e.preventDefault(); }
     if (e.key === 'ArrowLeft' || e.key === 'PageUp') { prev(); e.preventDefault(); }
   });
+
+  // Touch swipe. Only acts on a clearly horizontal drag past a distance
+  // threshold, so it doesn't fight the vertical scroll inside .book-right.
+  var touchStartX = 0, touchStartY = 0, touching = false;
+  stage.addEventListener('touchstart', function (e) {
+    if (e.target.closest('.book-nav')) return;
+    var t = e.changedTouches[0];
+    touchStartX = t.clientX; touchStartY = t.clientY; touching = true;
+  }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (!touching) return;
+    touching = false;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - touchStartX;
+    var dy = t.clientY - touchStartY;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      if (dx < 0) next(); else prev();
+    }
+  }, { passive: true });
 
   render();
   if (stage.classList.contains('no-anim')) {

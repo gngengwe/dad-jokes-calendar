@@ -228,7 +228,7 @@ def render_index():
     <div class="flip-page" id="{m['key']}" data-index="{i + 1}" style="z-index:{total - i - 1};">
       <div class="book-spread">
         <div class="book-left">
-          <img src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}" loading="lazy">
+          <img data-src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
           {pins}
         </div>
         <div class="book-right" style="--accent:{m['season']};">
