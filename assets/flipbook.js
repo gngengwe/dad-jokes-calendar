@@ -31,19 +31,93 @@
     });
   }
 
+  var monthsBtn = document.getElementById('monthsBtn');
+  var monthMenu = document.getElementById('monthMenu');
+  var artView = document.getElementById('artView');
+  var artImg = artView ? artView.querySelector('img') : null;
+  var artReturnFocus = null;
+
   function render() {
     pages.forEach(function (page) {
       var idx = Number(page.dataset.index);
       page.classList.toggle('turned', idx < current);
+      // Only the visible page is reachable by keyboard / screen reader.
+      var visible = idx === current;
+      page.inert = !visible;
+      page.setAttribute('aria-hidden', visible ? 'false' : 'true');
     });
     if (pageNum) pageNum.textContent = current + 1;
     if (prevBtn) prevBtn.disabled = current === 0;
     if (nextBtn) nextBtn.disabled = current === total - 1;
+    if (monthMenu) {
+      Array.prototype.forEach.call(monthMenu.querySelectorAll('[data-idx]'), function (b) {
+        if (Number(b.dataset.idx) === current) b.setAttribute('aria-current', 'page');
+        else b.removeAttribute('aria-current');
+      });
+    }
     loadImagesAround(current);
+
+    // Keep the address bar on the page being viewed so the URL is shareable.
+    var wantHash = current === 0 ? '' : '#' + sections[current];
+    if (sections[current] && location.hash !== wantHash) {
+      history.replaceState(null, '', location.pathname + location.search + wantHash);
+    }
   }
 
-  function next() { if (current < total - 1) { current++; render(); } }
-  function prev() { if (current > 0) { current--; render(); } }
+  function goTo(idx) {
+    idx = Math.max(0, Math.min(total - 1, idx));
+    if (idx !== current) { current = idx; render(); }
+  }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  // Editing the hash by hand / following an in-page link switches the page.
+  window.addEventListener('hashchange', function () {
+    var i = location.hash ? sections.indexOf(location.hash.slice(1)) : 0;
+    if (i > -1) goTo(i);
+  });
+
+  // Month picker.
+  function setMenu(open) {
+    if (!monthMenu || !monthsBtn) return;
+    monthMenu.hidden = !open;
+    monthsBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      var cur = monthMenu.querySelector('[data-idx="' + current + '"]');
+      if (cur) cur.focus();
+    }
+  }
+  if (monthsBtn && monthMenu) {
+    monthsBtn.addEventListener('click', function (e) { e.stopPropagation(); setMenu(monthMenu.hidden); });
+    monthMenu.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-idx]');
+      if (!b) return;
+      goTo(Number(b.dataset.idx));
+      setMenu(false);
+      monthsBtn.focus();
+    });
+    document.addEventListener('click', function (e) {
+      if (!monthMenu.hidden && !e.target.closest('#monthMenu') && !e.target.closest('#monthsBtn')) setMenu(false);
+    });
+  }
+
+  // Full-illustration viewer.
+  function openArt(page, trigger) {
+    var src = page.querySelector('.art img');
+    if (!artView || !artImg || !src || !src.getAttribute('src')) return;
+    artImg.src = src.currentSrc || src.src;
+    artImg.alt = src.alt;
+    artReturnFocus = trigger;
+    artView.hidden = false;
+    var close = artView.querySelector('.art-view-close');
+    if (close) close.focus();
+  }
+  function closeArt() {
+    if (!artView || artView.hidden) return;
+    artView.hidden = true;
+    if (artReturnFocus) artReturnFocus.focus();
+  }
+  if (artView) artView.addEventListener('click', closeArt);
 
   if (prevBtn) prevBtn.addEventListener('click', prev);
   if (nextBtn) nextBtn.addEventListener('click', next);
@@ -52,7 +126,7 @@
 
   stage.setAttribute('tabindex', '0');
   stage.addEventListener('click', function (e) {
-    if (e.target.closest('.book-nav') || e.target.closest('.pin') || e.target.closest('.book-right') || e.target.closest('.book-reveal')) return;
+    if (e.target.closest('.book-nav') || e.target.closest('.pin') || e.target.closest('.book-right') || e.target.closest('.book-reveal') || e.target.closest('.art-expand')) return;
     var rect = stage.getBoundingClientRect();
     var x = e.clientX - rect.left;
     if (x > rect.width / 2) next(); else prev();
@@ -67,6 +141,8 @@
     var revealBtn = page.querySelector('.book-reveal-btn');
     var revealCard = page.querySelector('.book-reveal');
     var closeBtn = page.querySelector('.book-reveal-close');
+    var expandBtn = page.querySelector('.art-expand');
+    if (expandBtn) expandBtn.addEventListener('click', function (e) { e.stopPropagation(); openArt(page, expandBtn); });
 
     function reveal() {
       if (revealCard && revealCard.hidden) {
@@ -100,6 +176,12 @@
   });
 
   document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (artView && !artView.hidden) { closeArt(); e.preventDefault(); return; }
+      if (monthMenu && !monthMenu.hidden) { setMenu(false); if (monthsBtn) monthsBtn.focus(); e.preventDefault(); return; }
+    }
+    // Arrow keys belong to the picker / viewer while either is open.
+    if ((artView && !artView.hidden) || (monthMenu && !monthMenu.hidden)) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown') { next(); e.preventDefault(); }
     if (e.key === 'ArrowLeft' || e.key === 'PageUp') { prev(); e.preventDefault(); }
   });

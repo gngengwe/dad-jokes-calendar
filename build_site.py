@@ -84,7 +84,7 @@ def build_grid(days, first_weekday):
 # keep its faces and both hotspot pins inside the visible window.
 ART_FOCUS_Y = {
     "jan": 32, "feb": 8, "mar": 3, "apr": 26, "may": 21, "jun": 16,
-    "jul": 26, "aug": 32, "sep": 21, "oct": 21, "nov": 26, "dec": 21,
+    "jul": 26, "aug": 38, "sep": 21, "oct": 21, "nov": 26, "dec": 21,
 }
 
 
@@ -252,6 +252,9 @@ def render_index():
             <img data-src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
             {pins}
           </div>
+          <button class="art-expand" type="button" aria-label="View the full illustration">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
         </div>
         <div class="book-right" style="--accent:{m['season']};">
           <div class="book-card">
@@ -279,6 +282,10 @@ def render_index():
     </div>"""
 
     section_ids = ["cover"] + [m["key"] for m in MONTHS]
+    menu_items = '<button type="button" role="menuitem" data-idx="0" class="menu-cover">Cover</button>' + "".join(
+        f'<button type="button" role="menuitem" data-idx="{i + 1}">{m["name"][:3]}</button>'
+        for i, m in enumerate(MONTHS)
+    )
 
     html += f"""
 <div class="book-wrap">
@@ -287,7 +294,15 @@ def render_index():
   <button class="book-nav prev" id="bookPrev" aria-label="Previous page">&larr;</button>
   <button class="book-nav next" id="bookNext" aria-label="Next page">&rarr;</button>
 </div>
-<p class="book-progress"><span id="bookPageNum">1</span> / {total}</p>
+<div class="book-progress">
+  <button class="book-months-btn" id="monthsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="monthMenu">Months &#9662;</button>
+  <span class="book-progress-count"><span id="bookPageNum">1</span> / {total}</span>
+</div>
+<div class="book-month-menu" id="monthMenu" role="menu" aria-label="Jump to a month" hidden>{menu_items}</div>
+<div class="art-view" id="artView" role="dialog" aria-modal="true" aria-label="Full illustration" hidden>
+  <button class="art-view-close" type="button" aria-label="Close full illustration">&times;</button>
+  <img alt="">
+</div>
 <script>window.__BOOK_SECTIONS__ = {json.dumps(section_ids)};</script>
 <script src="/assets/flipbook.js?v={ASSET_V}"></script>
 </div>

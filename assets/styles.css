@@ -323,9 +323,56 @@ html:has(.flip-body), html:has(.flip-body) body{ height:100%; }
 .book-nav.next{ right:0.6rem; }
 
 .book-progress{
-  flex:0 0 auto;
-  text-align:center; font-family:'Archivo'; font-size:0.76rem; color:var(--ink-soft);
+  flex:0 0 auto; display:flex; justify-content:center; align-items:center; gap:0.9rem;
+  font-family:'Archivo'; font-size:0.76rem; color:var(--ink-soft);
   font-variant-numeric:tabular-nums; padding-bottom:0.75rem;
+}
+.flip-body .wrap{ position:relative; }
+.book-months-btn{
+  font:inherit; font-weight:600; color:var(--ink-soft); background:none; cursor:pointer;
+  border:1px solid var(--line); border-radius:999px; padding:0.28rem 0.8rem;
+}
+.book-months-btn:hover, .book-months-btn[aria-expanded="true"]{ border-color:var(--brass); color:var(--brass-ink); }
+
+.book-month-menu{
+  position:absolute; left:50%; transform:translateX(-50%); z-index:30;
+  bottom:calc(3rem + env(safe-area-inset-bottom)); width:min(92vw,340px);
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0.4rem; padding:0.7rem;
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 14px 40px -8px rgba(20,14,6,0.5);
+}
+.book-month-menu[hidden]{ display:none; }
+.book-month-menu button{
+  font-family:'Archivo'; font-size:0.86rem; font-weight:600; color:var(--ink); background:none;
+  border:1px solid transparent; border-radius:9px; min-height:44px; cursor:pointer;
+}
+.book-month-menu button:hover{ background:rgba(184,117,42,0.12); }
+.book-month-menu button[aria-current="page"]{ background:var(--brass); color:#170C05; }
+.book-month-menu .menu-cover{ grid-column:1 / -1; }
+
+.art-expand{
+  position:absolute; top:0.6rem; right:0.6rem; z-index:3; width:38px; height:38px;
+  display:grid; place-items:center; color:#fff; background:rgba(20,14,6,0.55);
+  border:1px solid rgba(255,255,255,0.25); border-radius:50%; cursor:pointer;
+  backdrop-filter:blur(4px);
+}
+.art-expand:hover{ background:rgba(20,14,6,0.8); }
+@media (pointer:coarse){ .art-expand{ width:44px; height:44px; } .book-months-btn{ min-height:44px; padding:0.6rem 1.1rem; } }
+
+.art-view{
+  position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:1rem;
+  grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr);
+  background:rgba(12,8,4,0.95); cursor:zoom-out;
+}
+.art-view[hidden]{ display:none; }
+.art-view img{
+  max-width:min(100%,920px); max-height:100%; width:auto; height:auto; object-fit:contain;
+  border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+.art-view-close{
+  position:fixed; top:max(0.8rem, env(safe-area-inset-top)); right:max(0.8rem, env(safe-area-inset-right));
+  width:48px; height:48px; border-radius:50%; border:1px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.12); color:#fff; font-size:1.7rem; line-height:1; cursor:pointer;
 }
 
 /* ---------- Flipbook: mobile ---------- */

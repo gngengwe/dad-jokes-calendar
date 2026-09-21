@@ -21,14 +21,14 @@
       "hotspots": [
         {
           "x": 72,
-          "y": 30,
+          "y": 18,
           "kind": "Place",
           "title": "The Grand Hall clock",
-          "text": "Union Station opened in 1914 as one of the largest train stations in the country. Its four-faced clock has anchored the Grand Hall for over a century — saved from demolition by a 1996 bi-state sales-tax vote."
+          "text": "Union Station opened in 1914 as one of the largest train stations in the country. Its Grand Hall clock is the classic “meet me at the clock” spot — and a 1996 bi-state sales-tax vote helped fund the restoration that reopened the station in 1999."
         },
         {
-          "x": 41,
-          "y": 58,
+          "x": 47,
+          "y": 44,
           "kind": "Joke",
           "title": "The days off",
           "text": "He's holding the removed dates like ordinary paper — a dad literally carrying the punchline, with the station's own clock keeping the time logic honest behind him."
@@ -61,8 +61,8 @@
           "text": "Opened in 1923 as the nation's first shopping district built around the automobile, modeled on Seville, Spain — the wrought-iron balconies and tile roofs are a direct homage."
         },
         {
-          "x": 46,
-          "y": 32,
+          "x": 57,
+          "y": 19,
           "kind": "Joke",
           "title": "The eyebrow",
           "text": "A genuine, warm embrace — with the smallest flicker of ‘wait, what did I do?’ in his expression. That's the entire joke."
@@ -89,8 +89,8 @@
       "seasonName": "Cool neutral gray + early spring",
       "hotspots": [
         {
-          "x": 50,
-          "y": 16,
+          "x": 22,
+          "y": 8,
           "kind": "Place",
           "title": "KCI's new terminal",
           "text": "Kansas City International replaced its original 1972 circular terminals with a single $1.5B terminal in 2023 — the sweeping curved roofline behind this scene is the real building."
@@ -110,7 +110,7 @@
       "order": 4,
       "days": 30,
       "firstWeekday": 4,
-      "location": "J.C. Nichols Memorial Fountain",
+      "location": "Mill Creek Park Fountain",
       "tag": "Level 2 · Completion",
       "setup": "If April showers bring May flowers,",
       "punch": "what do May flowers bring? Pilgrims.",
@@ -127,8 +127,8 @@
           "x": 70,
           "y": 22,
           "kind": "Place",
-          "title": "J.C. Nichols Memorial Fountain",
-          "text": "Kansas City has more fountains than any city but Rome — this bronze equestrian fountain on the Plaza is one of its most photographed."
+          "title": "Mill Creek Park Fountain",
+          "text": "Kansas City calls itself the City of Fountains, and this bronze equestrian fountain at the east entrance to the Plaza is one of its most photographed. The J.C. Nichols name was removed in 2020; the city now lists it simply as the Fountain in Mill Creek Park."
         },
         {
           "x": 8,
@@ -162,7 +162,7 @@
           "y": 30,
           "kind": "Place",
           "title": "Loose Park's rose garden",
-          "text": "Named for Jacob Loose of the Sunshine Biscuit company, the park's formal rose garden holds over 5,000 bushes and is a certified All-America Rose Selections display garden."
+          "text": "Named for Jacob Loose of the Sunshine Biscuit company, the park’s formal rose garden holds nearly 3,000 roses of about 130 varieties, and was honored in 1989 by All-America Rose Selections as an outstanding public rose garden."
         },
         {
           "x": 48,
@@ -196,7 +196,7 @@
           "y": 32,
           "kind": "Place",
           "title": "Swope Memorial Golf Course",
-          "text": "A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — it hosted a PGA Tour Champions event in the 1990s."
+          "text": "A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — A.W. Tillinghast redesigned it in 1934, and it hosted the 1949 Kansas City Open, a PGA Tour event."
         },
         {
           "x": 14,
@@ -260,15 +260,15 @@
       "seasonName": "Bright late-summer gold + arts neutrals",
       "hotspots": [
         {
-          "x": 35,
-          "y": 32,
+          "x": 16,
+          "y": 36,
           "kind": "Place",
           "title": "Kauffman Center for the Performing Arts",
-          "text": "Moshe Safdie's two shell-like vaults opened in 2011 — the larger houses a 1,600-seat concert hall, the smaller an 1,800-seat performance hall."
+          "text": "Moshe Safdie’s two shell-like vaults opened in 2011 — the 1,600-seat Helzberg Hall for concerts and the 1,800-seat Muriel Kauffman Theatre for opera and ballet."
         },
         {
-          "x": 28,
-          "y": 60,
+          "x": 36,
+          "y": 71,
           "kind": "Joke",
           "title": "The ladder",
           "text": "No floating musical notes anywhere in the piece — the ladder does all the work the pun needs."
@@ -301,8 +301,8 @@
           "text": "KC football spirit shows only through the coach's red quarter-zip and whistle — no team names, logos, or wordmarks appear anywhere in the piece."
         },
         {
-          "x": 55,
-          "y": 42,
+          "x": 84,
+          "y": 65,
           "kind": "Joke",
           "title": "The quarter",
           "text": "The teller hands over a literal quarter, completely deadpan, like any ordinary transaction across the counter."
