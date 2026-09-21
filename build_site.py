@@ -27,7 +27,7 @@ HEAD = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{site_url}/{slug}">
@@ -234,7 +234,7 @@ def render_index():
         <div class="book-cover-copy">
           <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
           <h1>Midwest Deadpan</h1>
-          <p class="book-cover-hint">Turn the page to begin &rarr;</p>
+          <p class="book-cover-hint"><span class="hint-tap">Turn the page to begin &rarr;</span><span class="hint-touch">Swipe to begin &rarr;</span></p>
         </div>
       </div>
     </div>"""

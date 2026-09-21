@@ -322,3 +322,68 @@ html:has(.flip-body), html:has(.flip-body) body{ height:100%; }
   text-align:center; font-family:'Archivo'; font-size:0.76rem; color:var(--ink-soft);
   font-variant-numeric:tabular-nums; padding-bottom:0.75rem;
 }
+
+/* ---------- Flipbook: mobile ---------- */
+html:has(.flip-body){ -webkit-text-size-adjust:100%; text-size-adjust:100%; overscroll-behavior:none; }
+.flip-body{ -webkit-tap-highlight-color:transparent; }
+.flip-body button, .flip-body a{ touch-action:manipulation; }
+.book-stage{ touch-action:pan-y pinch-zoom; }
+.hint-touch{ display:none; }
+@media (hover:none){ .hint-touch{ display:inline; } .hint-tap{ display:none; } }
+
+/* Size to the *visible* viewport so the phone's collapsing URL bar never
+   leaves a gap or hides the bottom of the page. */
+@supports (height:100dvh){
+  html:has(.flip-body) body, .flip-body{ height:100dvh; }
+}
+/* Notch / home-indicator safe areas (needs viewport-fit=cover). */
+.flip-body .site-header{
+  padding-left:max(clamp(1rem,4vw,2rem), env(safe-area-inset-left));
+  padding-right:max(clamp(1rem,4vw,2rem), env(safe-area-inset-right));
+  padding-top:max(0.85rem, env(safe-area-inset-top));
+}
+.book-progress{ padding-bottom:calc(0.75rem + env(safe-area-inset-bottom)); }
+.book-nav.prev{ left:max(0.6rem, env(safe-area-inset-left)); }
+.book-nav.next{ right:max(0.6rem, env(safe-area-inset-right)); }
+
+/* Thumb-sized controls on touch screens. */
+@media (pointer:coarse){
+  .book-nav{ width:48px; height:48px; }
+  .book-reveal-btn{ min-height:46px; padding:0.75rem 1.7rem; font-size:0.9rem; }
+  .book-reveal-close{ min-height:44px; padding:0.6rem 1.4rem; font-size:0.78rem; }
+  .flip-body .site-header nav a{ display:inline-block; padding:1rem 0.5rem; margin:-1rem -0.15rem; }
+  .book-left .pin{ width:44px; height:44px; margin:-22px 0 0 -22px; font-size:0.95rem; }
+}
+
+/* Small / short phones: keep the header on one line and give the painting
+   every spare pixel. */
+@media (max-width:380px){
+  .flip-body .site-header{ gap:0.75rem; }
+  .flip-body .site-header .wordmark{ font-size:1.2rem; }
+}
+@media (max-height:620px){
+  .flip-body .site-header{ padding-top:max(0.45rem, env(safe-area-inset-top)); padding-bottom:0.45rem; }
+  .book-wrap{ padding-top:0.5rem; padding-bottom:0.4rem; }
+  .book-progress{ font-size:0.7rem; padding-bottom:calc(0.3rem + env(safe-area-inset-bottom)); }
+}
+
+/* Tall phones have room to spare: bigger, easier-to-read type. */
+@media (max-width:600px) and (min-height:760px){
+  .book-card .joke-setup{ font-size:0.86rem; }
+  .book-card .joke-punch{ font-size:1.02rem; }
+  .book-card .grid-month{ font-size:0.74rem; }
+  .book-card table.cal td{ padding:3px 0; font-size:0.86rem; }
+  .book-card table.cal th{ font-size:0.76rem; }
+  .book-reveal .note p{ font-size:0.86rem; }
+  .book-reveal .chain{ font-size:0.76rem; }
+}
+
+/* Phone held sideways: a full portrait page can't fit, so keep the page a
+   comfortable size and let the screen scroll vertically instead of shrinking
+   it to a thumbnail. */
+@media (orientation:landscape) and (max-height:520px){
+  html:has(.flip-body) body, .flip-body{ height:auto; min-height:100%; overflow-y:auto; overflow-x:hidden; }
+  .flip-body .wrap{ height:auto; min-height:100%; }
+  .book-wrap{ flex:0 0 auto; height:640px; }
+  .book-progress{ padding-bottom:calc(0.5rem + env(safe-area-inset-bottom)); }
+}
