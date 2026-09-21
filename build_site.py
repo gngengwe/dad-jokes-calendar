@@ -79,6 +79,15 @@ def build_grid(days, first_weekday):
     return "".join(rows)
 
 
+# Vertical crop anchor (object-position-style %) for each flipbook illustration.
+# The art is 4:5 portrait shown in a wider band, so each month is anchored to
+# keep its faces and both hotspot pins inside the visible window.
+ART_FOCUS_Y = {
+    "jan": 32, "feb": 8, "mar": 3, "apr": 26, "may": 21, "jun": 16,
+    "jul": 26, "aug": 32, "sep": 21, "oct": 21, "nov": 26, "dec": 21,
+}
+
+
 def hotspots_html(hotspots):
     pins = "".join(
         f'<button class="pin" style="left:{h["x"]}%; top:{h["y"]}%;" '
@@ -206,7 +215,7 @@ def render_index():
     """The flipbook is the primary homepage."""
     html = HEAD.format(
         title="Midwest Deadpan",
-        description="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.",
+        description="Flip through the 2027 Midwest Deadpan calendar one page at a time — illustration on top, the calendar below, and the story a tap away.",
         font_link=FONT_LINK,
         site_url=SITE_URL,
         slug="",
@@ -239,8 +248,10 @@ def render_index():
     <div class="flip-page" id="{m['key']}" data-index="{i + 1}" style="z-index:{total - i - 1};">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
-          {pins}
+          <div class="art" style="--fy:{ART_FOCUS_Y.get(m['key'], 20)}%;">
+            <img data-src="/assets/images/{m['key']}_hero.jpg" alt="{m['name']} 2027 illustration — {m['location']}">
+            {pins}
+          </div>
         </div>
         <div class="book-right" style="--accent:{m['season']};">
           <div class="book-card">
@@ -254,14 +265,15 @@ def render_index():
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>{m['location']}</h2>
-              <span class="tag-badge">{m['tag']}</span>
-            </div>
-            <div class="chain">{chain}</div>
-            <div class="note-list">{notes}</div>
+        </div>
+        <div class="book-reveal" style="--accent:{m['season']};" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>{m['location']}</h2>
+            <span class="tag-badge">{m['tag']}</span>
           </div>
+          <div class="chain">{chain}</div>
+          <div class="note-list">{notes}</div>
         </div>
       </div>
     </div>"""

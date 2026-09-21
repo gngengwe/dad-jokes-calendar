@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Midwest Deadpan</title>
-<meta name="description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
+<meta name="description" content="Flip through the 2027 Midwest Deadpan calendar one page at a time — illustration on top, the calendar below, and the story a tap away.">
 <link rel="canonical" href="https://dad-jokes-calendar.pages.dev/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Midwest Deadpan">
-<meta property="og:description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
+<meta property="og:description" content="Flip through the 2027 Midwest Deadpan calendar one page at a time — illustration on top, the calendar below, and the story a tap away.">
 <meta property="og:image" content="https://dad-jokes-calendar.pages.dev/assets/images/cover_hero.jpg">
 <meta property="og:url" content="https://dad-jokes-calendar.pages.dev/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Midwest Deadpan">
-<meta name="twitter:description" content="Flip through the 2027 Midwest Deadpan calendar one spread at a time — illustration on the left, the story on the right.">
+<meta name="twitter:description" content="Flip through the 2027 Midwest Deadpan calendar one page at a time — illustration on top, the calendar below, and the story a tap away.">
 <meta name="twitter:image" content="https://dad-jokes-calendar.pages.dev/assets/images/cover_hero.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/styles.css?v=1789700932">
+<link rel="stylesheet" href="/assets/styles.css?v=1789953749">
 </head>
 <body class="flip-body">
 <div class="wrap">
@@ -43,8 +43,10 @@
     <div class="flip-page" id="jan" data-index="1" style="z-index:12;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/jan_hero.jpg" alt="January 2027 illustration — Union Station">
-          <button class="pin" style="left:72%; top:30%;" data-idx="0" aria-label="The Grand Hall clock">1</button><button class="pin" style="left:41%; top:58%;" data-idx="1" aria-label="The days off">2</button>
+          <div class="art" style="--fy:32%;">
+            <img data-src="/assets/images/jan_hero.jpg" alt="January 2027 illustration — Union Station">
+            <button class="pin" style="left:72%; top:30%;" data-idx="0" aria-label="The Grand Hall clock">1</button><button class="pin" style="left:41%; top:58%;" data-idx="1" aria-label="The days off">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#5D7B93;">
           <div class="book-card">
@@ -58,22 +60,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Union Station</h2>
-              <span class="tag-badge">Level 1–2 · Setting & Completion</span>
-            </div>
-            <div class="chain"><span>Calendar factory</span><i>&rarr;</i><span>Days off</span><i>&rarr;</i><span>Time</span><i>&rarr;</i><span>Union Station clock</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The Grand Hall clock</h3><p>Union Station opened in 1914 as one of the largest train stations in the country. Its four-faced clock has anchored the Grand Hall for over a century — saved from demolition by a 1996 bi-state sales-tax vote.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The days off</h3><p>He's holding the removed dates like ordinary paper — a dad literally carrying the punchline, with the station's own clock keeping the time logic honest behind him.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#5D7B93;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Union Station</h2>
+            <span class="tag-badge">Level 1–2 · Setting & Completion</span>
           </div>
+          <div class="chain"><span>Calendar factory</span><i>&rarr;</i><span>Days off</span><i>&rarr;</i><span>Time</span><i>&rarr;</i><span>Union Station clock</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The Grand Hall clock</h3><p>Union Station opened in 1914 as one of the largest train stations in the country. Its four-faced clock has anchored the Grand Hall for over a century — saved from demolition by a 1996 bi-state sales-tax vote.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The days off</h3><p>He's holding the removed dates like ordinary paper — a dad literally carrying the punchline, with the station's own clock keeping the time logic honest behind him.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="feb" data-index="2" style="z-index:11;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/feb_hero.jpg" alt="February 2027 illustration — Country Club Plaza">
-          <button class="pin" style="left:15%; top:12%;" data-idx="0" aria-label="Country Club Plaza">1</button><button class="pin" style="left:46%; top:32%;" data-idx="1" aria-label="The eyebrow">2</button>
+          <div class="art" style="--fy:8%;">
+            <img data-src="/assets/images/feb_hero.jpg" alt="February 2027 illustration — Country Club Plaza">
+            <button class="pin" style="left:15%; top:12%;" data-idx="0" aria-label="Country Club Plaza">1</button><button class="pin" style="left:46%; top:32%;" data-idx="1" aria-label="The eyebrow">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#7B3B49;">
           <div class="book-card">
@@ -87,22 +92,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Country Club Plaza</h2>
-              <span class="tag-badge">Level 1 · Setting</span>
-            </div>
-            <div class="chain"><span>Mistakes</span><i>&rarr;</i><span>Embrace</span><i>&rarr;</i><span>Hug</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Country Club Plaza</h3><p>Opened in 1923 as the nation's first shopping district built around the automobile, modeled on Seville, Spain — the wrought-iron balconies and tile roofs are a direct homage.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The eyebrow</h3><p>A genuine, warm embrace — with the smallest flicker of ‘wait, what did I do?’ in his expression. That's the entire joke.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#7B3B49;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Country Club Plaza</h2>
+            <span class="tag-badge">Level 1 · Setting</span>
           </div>
+          <div class="chain"><span>Mistakes</span><i>&rarr;</i><span>Embrace</span><i>&rarr;</i><span>Hug</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Country Club Plaza</h3><p>Opened in 1923 as the nation's first shopping district built around the automobile, modeled on Seville, Spain — the wrought-iron balconies and tile roofs are a direct homage.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The eyebrow</h3><p>A genuine, warm embrace — with the smallest flicker of ‘wait, what did I do?’ in his expression. That's the entire joke.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="mar" data-index="3" style="z-index:10;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/mar_hero.jpg" alt="March 2027 illustration — Kansas City International">
-          <button class="pin" style="left:50%; top:16%;" data-idx="0" aria-label="KCI's new terminal">1</button><button class="pin" style="left:68%; top:32%;" data-idx="1" aria-label="The call">2</button>
+          <div class="art" style="--fy:3%;">
+            <img data-src="/assets/images/mar_hero.jpg" alt="March 2027 illustration — Kansas City International">
+            <button class="pin" style="left:50%; top:16%;" data-idx="0" aria-label="KCI's new terminal">1</button><button class="pin" style="left:68%; top:32%;" data-idx="1" aria-label="The call">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#A8A79C;">
           <div class="book-card">
@@ -116,22 +124,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Kansas City International</h2>
-              <span class="tag-badge">Level 3 · Convergence</span>
-            </div>
-            <div class="chain"><span>Basketball</span><i>&rarr;</i><span>Traveling violation</span><i>&rarr;</i><span>Actual travel</span><i>&rarr;</i><span>KCI</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>KCI's new terminal</h3><p>Kansas City International replaced its original 1972 circular terminals with a single $1.5B terminal in 2023 — the sweeping curved roofline behind this scene is the real building.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The call</h3><p>The referee's raised whistle and pointing arm do the work a caption would otherwise have to do — the gag reads before you've noticed the joke is a pun on “traveling.”</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#A8A79C;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Kansas City International</h2>
+            <span class="tag-badge">Level 3 · Convergence</span>
           </div>
+          <div class="chain"><span>Basketball</span><i>&rarr;</i><span>Traveling violation</span><i>&rarr;</i><span>Actual travel</span><i>&rarr;</i><span>KCI</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>KCI's new terminal</h3><p>Kansas City International replaced its original 1972 circular terminals with a single $1.5B terminal in 2023 — the sweeping curved roofline behind this scene is the real building.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The call</h3><p>The referee's raised whistle and pointing arm do the work a caption would otherwise have to do — the gag reads before you've noticed the joke is a pun on “traveling.”</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="apr" data-index="4" style="z-index:9;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/apr_hero.jpg" alt="April 2027 illustration — J.C. Nichols Memorial Fountain">
-          <button class="pin" style="left:70%; top:22%;" data-idx="0" aria-label="J.C. Nichols Memorial Fountain">1</button><button class="pin" style="left:8%; top:62%;" data-idx="1" aria-label="The travelers">2</button>
+          <div class="art" style="--fy:26%;">
+            <img data-src="/assets/images/apr_hero.jpg" alt="April 2027 illustration — J.C. Nichols Memorial Fountain">
+            <button class="pin" style="left:70%; top:22%;" data-idx="0" aria-label="J.C. Nichols Memorial Fountain">1</button><button class="pin" style="left:8%; top:62%;" data-idx="1" aria-label="The travelers">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#7A9178;">
           <div class="book-card">
@@ -145,22 +156,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>J.C. Nichols Memorial Fountain</h2>
-              <span class="tag-badge">Level 2 · Completion</span>
-            </div>
-            <div class="chain"><span>April showers</span><i>&rarr;</i><span>May flowers</span><i>&rarr;</i><span>Mayflower</span><i>&rarr;</i><span>Pilgrims</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>J.C. Nichols Memorial Fountain</h3><p>Kansas City has more fountains than any city but Rome — this bronze equestrian fountain on the Plaza is one of its most photographed.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The travelers</h3><p>A small huddle of cloaked travelers with old-fashioned luggage, arriving at the edge of frame — easy to miss on a first look, which is exactly the point.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#7A9178;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>J.C. Nichols Memorial Fountain</h2>
+            <span class="tag-badge">Level 2 · Completion</span>
           </div>
+          <div class="chain"><span>April showers</span><i>&rarr;</i><span>May flowers</span><i>&rarr;</i><span>Mayflower</span><i>&rarr;</i><span>Pilgrims</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>J.C. Nichols Memorial Fountain</h3><p>Kansas City has more fountains than any city but Rome — this bronze equestrian fountain on the Plaza is one of its most photographed.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The travelers</h3><p>A small huddle of cloaked travelers with old-fashioned luggage, arriving at the edge of frame — easy to miss on a first look, which is exactly the point.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="may" data-index="5" style="z-index:8;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/may_hero.jpg" alt="May 2027 illustration — Loose Park">
-          <button class="pin" style="left:75%; top:30%;" data-idx="0" aria-label="Loose Park's rose garden">1</button><button class="pin" style="left:48%; top:55%;" data-idx="1" aria-label="The ceremony">2</button>
+          <div class="art" style="--fy:21%;">
+            <img data-src="/assets/images/may_hero.jpg" alt="May 2027 illustration — Loose Park">
+            <button class="pin" style="left:75%; top:30%;" data-idx="0" aria-label="Loose Park's rose garden">1</button><button class="pin" style="left:48%; top:55%;" data-idx="1" aria-label="The ceremony">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#5F8850;">
           <div class="book-card">
@@ -174,22 +188,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Loose Park</h2>
-              <span class="tag-badge">Level 2 · Completion</span>
-            </div>
-            <div class="chain"><span>Scarecrow</span><i>&rarr;</i><span>Award</span><i>&rarr;</i><span>Outstanding in his field</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Loose Park's rose garden</h3><p>Named for Jacob Loose of the Sunshine Biscuit company, the park's formal rose garden holds over 5,000 bushes and is a certified All-America Rose Selections display garden.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The ceremony</h3><p>A small, entirely sincere award presentation — ribbon, medal, applause. Nobody in the field treats it as anything but an ordinary Tuesday.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#5F8850;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Loose Park</h2>
+            <span class="tag-badge">Level 2 · Completion</span>
           </div>
+          <div class="chain"><span>Scarecrow</span><i>&rarr;</i><span>Award</span><i>&rarr;</i><span>Outstanding in his field</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Loose Park's rose garden</h3><p>Named for Jacob Loose of the Sunshine Biscuit company, the park's formal rose garden holds over 5,000 bushes and is a certified All-America Rose Selections display garden.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The ceremony</h3><p>A small, entirely sincere award presentation — ribbon, medal, applause. Nobody in the field treats it as anything but an ordinary Tuesday.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="jun" data-index="6" style="z-index:7;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/jun_hero.jpg" alt="June 2027 illustration — Swope Memorial Golf Course">
-          <button class="pin" style="left:80%; top:32%;" data-idx="0" aria-label="Swope Memorial Golf Course">1</button><button class="pin" style="left:14%; top:62%;" data-idx="1" aria-label="The spare pants">2</button>
+          <div class="art" style="--fy:16%;">
+            <img data-src="/assets/images/jun_hero.jpg" alt="June 2027 illustration — Swope Memorial Golf Course">
+            <button class="pin" style="left:80%; top:32%;" data-idx="0" aria-label="Swope Memorial Golf Course">1</button><button class="pin" style="left:14%; top:62%;" data-idx="1" aria-label="The spare pants">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#2F5A3C;">
           <div class="book-card">
@@ -203,22 +220,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Swope Memorial Golf Course</h2>
-              <span class="tag-badge">Level 2 · Completion</span>
-            </div>
-            <div class="chain"><span>Golfer</span><i>&rarr;</i><span>Extra pants</span><i>&rarr;</i><span>Hole in one</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Swope Memorial Golf Course</h3><p>A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — it hosted a PGA Tour Champions event in the 1990s.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The spare pants</h3><p>Folded into the bag's side pocket like any other piece of gear. Nobody comments on it — which is the whole joke.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#2F5A3C;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Swope Memorial Golf Course</h2>
+            <span class="tag-badge">Level 2 · Completion</span>
           </div>
+          <div class="chain"><span>Golfer</span><i>&rarr;</i><span>Extra pants</span><i>&rarr;</i><span>Hole in one</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Swope Memorial Golf Course</h3><p>A public course inside 1,800-acre Swope Park, one of the largest municipal parks in the country — it hosted a PGA Tour Champions event in the 1990s.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The spare pants</h3><p>Folded into the bag's side pocket like any other piece of gear. Nobody comments on it — which is the whole joke.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="jul" data-index="7" style="z-index:6;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/jul_hero.jpg" alt="July 2027 illustration — Liberty Memorial">
-          <button class="pin" style="left:22%; top:30%;" data-idx="0" aria-label="Liberty Memorial">1</button><button class="pin" style="left:40%; top:30%;" data-idx="1" aria-label="The conversation">2</button>
+          <div class="art" style="--fy:26%;">
+            <img data-src="/assets/images/jul_hero.jpg" alt="July 2027 illustration — Liberty Memorial">
+            <button class="pin" style="left:22%; top:30%;" data-idx="0" aria-label="Liberty Memorial">1</button><button class="pin" style="left:40%; top:30%;" data-idx="1" aria-label="The conversation">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#8CACC7;">
           <div class="book-card">
@@ -232,22 +252,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Liberty Memorial</h2>
-              <span class="tag-badge">Level 1 · Setting</span>
-            </div>
-            <div class="chain"><span>Flag</span><i>&rarr;</i><span>Wave</span><i>&rarr;</i><span>Nothing</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Liberty Memorial</h3><p>The 217-foot tower has stood over Kansas City's skyline since 1926, marking the National WWI Museum — the United States' official museum dedicated to World War I.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The conversation</h3><p>The wind just happens to fold two flags toward each other. Nothing about them is drawn as a character — it's purely a trick of the gust.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#8CACC7;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Liberty Memorial</h2>
+            <span class="tag-badge">Level 1 · Setting</span>
           </div>
+          <div class="chain"><span>Flag</span><i>&rarr;</i><span>Wave</span><i>&rarr;</i><span>Nothing</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Liberty Memorial</h3><p>The 217-foot tower has stood over Kansas City's skyline since 1926, marking the National WWI Museum — the United States' official museum dedicated to World War I.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The conversation</h3><p>The wind just happens to fold two flags toward each other. Nothing about them is drawn as a character — it's purely a trick of the gust.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="aug" data-index="8" style="z-index:5;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/aug_hero.jpg" alt="August 2027 illustration — Kauffman Center">
-          <button class="pin" style="left:35%; top:32%;" data-idx="0" aria-label="Kauffman Center for the Performing Arts">1</button><button class="pin" style="left:28%; top:60%;" data-idx="1" aria-label="The ladder">2</button>
+          <div class="art" style="--fy:32%;">
+            <img data-src="/assets/images/aug_hero.jpg" alt="August 2027 illustration — Kauffman Center">
+            <button class="pin" style="left:35%; top:32%;" data-idx="0" aria-label="Kauffman Center for the Performing Arts">1</button><button class="pin" style="left:28%; top:60%;" data-idx="1" aria-label="The ladder">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#D4B23A;">
           <div class="book-card">
@@ -261,22 +284,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Kauffman Center</h2>
-              <span class="tag-badge">Level 3 · Convergence</span>
-            </div>
-            <div class="chain"><span>Music teacher</span><i>&rarr;</i><span>High notes</span><i>&rarr;</i><span>Ladder</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Kauffman Center for the Performing Arts</h3><p>Moshe Safdie's two shell-like vaults opened in 2011 — the larger houses a 1,600-seat concert hall, the smaller an 1,800-seat performance hall.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The ladder</h3><p>No floating musical notes anywhere in the piece — the ladder does all the work the pun needs.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#D4B23A;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Kauffman Center</h2>
+            <span class="tag-badge">Level 3 · Convergence</span>
           </div>
+          <div class="chain"><span>Music teacher</span><i>&rarr;</i><span>High notes</span><i>&rarr;</i><span>Ladder</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>Kauffman Center for the Performing Arts</h3><p>Moshe Safdie's two shell-like vaults opened in 2011 — the larger houses a 1,600-seat concert hall, the smaller an 1,800-seat performance hall.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The ladder</h3><p>No floating musical notes anywhere in the piece — the ladder does all the work the pun needs.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="sep" data-index="9" style="z-index:4;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/sep_hero.jpg" alt="September 2027 illustration — A KC Bank">
-          <button class="pin" style="left:20%; top:16%;" data-idx="0" aria-label="An old-fashioned KC bank">1</button><button class="pin" style="left:55%; top:42%;" data-idx="1" aria-label="The quarter">2</button>
+          <div class="art" style="--fy:21%;">
+            <img data-src="/assets/images/sep_hero.jpg" alt="September 2027 illustration — A KC Bank">
+            <button class="pin" style="left:20%; top:16%;" data-idx="0" aria-label="An old-fashioned KC bank">1</button><button class="pin" style="left:55%; top:42%;" data-idx="1" aria-label="The quarter">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#9A4A1E;">
           <div class="book-card">
@@ -290,22 +316,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>A KC Bank</h2>
-              <span class="tag-badge">Level 3 · Convergence</span>
-            </div>
-            <div class="chain"><span>Coach</span><i>&rarr;</i><span>Quarter</span><i>&rarr;</i><span>Quarter back</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>An old-fashioned KC bank</h3><p>KC football spirit shows only through the coach's red quarter-zip and whistle — no team names, logos, or wordmarks appear anywhere in the piece.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The quarter</h3><p>The teller hands over a literal quarter, completely deadpan, like any ordinary transaction across the counter.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#9A4A1E;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>A KC Bank</h2>
+            <span class="tag-badge">Level 3 · Convergence</span>
           </div>
+          <div class="chain"><span>Coach</span><i>&rarr;</i><span>Quarter</span><i>&rarr;</i><span>Quarter back</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>An old-fashioned KC bank</h3><p>KC football spirit shows only through the coach's red quarter-zip and whistle — no team names, logos, or wordmarks appear anywhere in the piece.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The quarter</h3><p>The teller hands over a literal quarter, completely deadpan, like any ordinary transaction across the counter.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="oct" data-index="10" style="z-index:3;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/oct_hero.jpg" alt="October 2027 illustration — KC Barbecue Joint">
-          <button class="pin" style="left:35%; top:15%;" data-idx="0" aria-label="The smoker">1</button><button class="pin" style="left:48%; top:63%;" data-idx="1" aria-label="Spare ribs">2</button>
+          <div class="art" style="--fy:21%;">
+            <img data-src="/assets/images/oct_hero.jpg" alt="October 2027 illustration — KC Barbecue Joint">
+            <button class="pin" style="left:35%; top:15%;" data-idx="0" aria-label="The smoker">1</button><button class="pin" style="left:48%; top:63%;" data-idx="1" aria-label="Spare ribs">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#6B3524;">
           <div class="book-card">
@@ -319,22 +348,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>KC Barbecue Joint</h2>
-              <span class="tag-badge">Level 3 · Convergence</span>
-            </div>
-            <div class="chain"><span>Skeleton</span><i>&rarr;</i><span>Ribs</span><i>&rarr;</i><span>Spare ribs (pun)</span><i>&rarr;</i><span>KC barbecue</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The smoker</h3><p>Kansas City is one of the most decorated barbecue cities in the country — over 100 joints, and home to the American Royal World Series of Barbecue. That's a real offset smoker through the pass window.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>Spare ribs</h3><p>He's test-fitting a rib into the actual gap in his own ribcage — the pun made literal, and nobody at the table finds it worth a second look.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#6B3524;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>KC Barbecue Joint</h2>
+            <span class="tag-badge">Level 3 · Convergence</span>
           </div>
+          <div class="chain"><span>Skeleton</span><i>&rarr;</i><span>Ribs</span><i>&rarr;</i><span>Spare ribs (pun)</span><i>&rarr;</i><span>KC barbecue</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The smoker</h3><p>Kansas City is one of the most decorated barbecue cities in the country — over 100 joints, and home to the American Royal World Series of Barbecue. That's a real offset smoker through the pass window.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>Spare ribs</h3><p>He's test-fitting a rib into the actual gap in his own ribcage — the pun made literal, and nobody at the table finds it worth a second look.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="nov" data-index="11" style="z-index:2;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/nov_hero.jpg" alt="November 2027 illustration — 18th & Vine Jazz District">
-          <button class="pin" style="left:80%; top:18%;" data-idx="0" aria-label="18th & Vine">1</button><button class="pin" style="left:58%; top:58%;" data-idx="1" aria-label="The drummer">2</button>
+          <div class="art" style="--fy:26%;">
+            <img data-src="/assets/images/nov_hero.jpg" alt="November 2027 illustration — 18th & Vine Jazz District">
+            <button class="pin" style="left:80%; top:18%;" data-idx="0" aria-label="18th & Vine">1</button><button class="pin" style="left:58%; top:58%;" data-idx="1" aria-label="The drummer">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#B8752A;">
           <div class="book-card">
@@ -348,22 +380,25 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>18th & Vine Jazz District</h2>
-              <span class="tag-badge">Level 3 · Convergence — the ceiling</span>
-            </div>
-            <div class="chain"><span>Turkey</span><i>&rarr;</i><span>Drumsticks</span><i>&rarr;</i><span>Music</span><i>&rarr;</i><span>Jazz</span><i>&rarr;</i><span>18th & Vine</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>18th & Vine</h3><p>Birthplace of the Kansas City jazz sound in the 1920s–30s, and the former stomping ground of Charlie Parker and Count Basie. Today it's home to the American Jazz Museum and the Negro Leagues Baseball Museum.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The drummer</h3><p>Nobody in the trio treats the turkey as remarkable — that restraint is the whole joke. The feather beside the dropped drum brush at his feet is the one easter egg this page allows itself.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#B8752A;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>18th & Vine Jazz District</h2>
+            <span class="tag-badge">Level 3 · Convergence — the ceiling</span>
           </div>
+          <div class="chain"><span>Turkey</span><i>&rarr;</i><span>Drumsticks</span><i>&rarr;</i><span>Music</span><i>&rarr;</i><span>Jazz</span><i>&rarr;</i><span>18th & Vine</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>18th & Vine</h3><p>Birthplace of the Kansas City jazz sound in the 1920s–30s, and the former stomping ground of Charlie Parker and Count Basie. Today it's home to the American Jazz Museum and the Negro Leagues Baseball Museum.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The drummer</h3><p>Nobody in the trio treats the turkey as remarkable — that restraint is the whole joke. The feather beside the dropped drum brush at his feet is the one easter egg this page allows itself.</p></div></div></div>
         </div>
       </div>
     </div>
     <div class="flip-page" id="dec" data-index="12" style="z-index:1;">
       <div class="book-spread">
         <div class="book-left">
-          <img data-src="/assets/images/dec_hero.jpg" alt="December 2027 illustration — Plaza Lights">
-          <button class="pin" style="left:50%; top:15%;" data-idx="0" aria-label="The Plaza Lights">1</button><button class="pin" style="left:26%; top:55%;" data-idx="1" aria-label="The bill">2</button>
+          <div class="art" style="--fy:21%;">
+            <img data-src="/assets/images/dec_hero.jpg" alt="December 2027 illustration — Plaza Lights">
+            <button class="pin" style="left:50%; top:15%;" data-idx="0" aria-label="The Plaza Lights">1</button><button class="pin" style="left:26%; top:55%;" data-idx="1" aria-label="The bill">2</button>
+          </div>
         </div>
         <div class="book-right" style="--accent:#1F2B45;">
           <div class="book-card">
@@ -377,14 +412,15 @@
             </table>
           </div>
           <button class="book-reveal-btn" type="button" aria-expanded="false">Reveal the story &rarr;</button>
-          <div class="book-card book-reveal" hidden>
-            <div class="panel-head">
-              <h2>Plaza Lights</h2>
-              <span class="tag-badge">Level 1 · Setting</span>
-            </div>
-            <div class="chain"><span>Lights</span><i>&rarr;</i><span>Brighten</span><i>&rarr;</i><span>Electric bill</span></div>
-            <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The Plaza Lights</h3><p>The Plaza Lights have illuminated Kansas City every winter since 1925 — over 80 miles of bulbs strung along the rooflines each November.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The bill</h3><p>Everyone else looks up in wonder; Dad's eyes are on the bill in his hand. Nobody else in the scene notices where he's looking.</p></div></div></div>
+        </div>
+        <div class="book-reveal" style="--accent:#1F2B45;" hidden>
+          <button class="book-reveal-close" type="button">Hide story &darr;</button>
+          <div class="panel-head">
+            <h2>Plaza Lights</h2>
+            <span class="tag-badge">Level 1 · Setting</span>
           </div>
+          <div class="chain"><span>Lights</span><i>&rarr;</i><span>Brighten</span><i>&rarr;</i><span>Electric bill</span></div>
+          <div class="note-list"><div class="note" data-idx="0"><div class="note-num">1</div><div><span class="kind">Place</span><h3>The Plaza Lights</h3><p>The Plaza Lights have illuminated Kansas City every winter since 1925 — over 80 miles of bulbs strung along the rooflines each November.</p></div></div><div class="note" data-idx="1"><div class="note-num">2</div><div><span class="kind">Joke</span><h3>The bill</h3><p>Everyone else looks up in wonder; Dad's eyes are on the bill in his hand. Nobody else in the scene notices where he's looking.</p></div></div></div>
         </div>
       </div>
     </div>
@@ -394,7 +430,7 @@
 </div>
 <p class="book-progress"><span id="bookPageNum">1</span> / 13</p>
 <script>window.__BOOK_SECTIONS__ = ["cover", "jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];</script>
-<script src="/assets/flipbook.js?v=1789700932"></script>
+<script src="/assets/flipbook.js?v=1789953749"></script>
 </div>
 </body>
 </html>

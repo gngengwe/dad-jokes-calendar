@@ -50,7 +50,7 @@
 
   stage.setAttribute('tabindex', '0');
   stage.addEventListener('click', function (e) {
-    if (e.target.closest('.book-nav') || e.target.closest('.pin') || e.target.closest('.book-right')) return;
+    if (e.target.closest('.book-nav') || e.target.closest('.pin') || e.target.closest('.book-right') || e.target.closest('.book-reveal')) return;
     var rect = stage.getBoundingClientRect();
     var x = e.clientX - rect.left;
     if (x > rect.width / 2) next(); else prev();
@@ -64,13 +64,20 @@
     var pageNotes = Array.prototype.slice.call(page.querySelectorAll('.note'));
     var revealBtn = page.querySelector('.book-reveal-btn');
     var revealCard = page.querySelector('.book-reveal');
-    var rightCol = page.querySelector('.book-right');
+    var closeBtn = page.querySelector('.book-reveal-close');
 
     function reveal() {
       if (revealCard && revealCard.hidden) {
         revealCard.hidden = false;
         if (revealBtn) revealBtn.setAttribute('aria-expanded', 'true');
-        if (rightCol) rightCol.classList.add('is-revealed');
+      }
+    }
+
+    function hideStory() {
+      if (revealCard && !revealCard.hidden) {
+        revealCard.hidden = true;
+        if (revealBtn) revealBtn.setAttribute('aria-expanded', 'false');
+        highlight(-1);
       }
     }
 
@@ -87,6 +94,7 @@
       note.addEventListener('mouseenter', function () { highlight(i); });
     });
     if (revealBtn) revealBtn.addEventListener('click', function (e) { e.stopPropagation(); reveal(); });
+    if (closeBtn) closeBtn.addEventListener('click', function (e) { e.stopPropagation(); hideStory(); });
   });
 
   document.addEventListener('keydown', function (e) {
