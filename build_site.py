@@ -234,7 +234,7 @@ def render_index():
         <div class="book-cover-copy">
           <p class="feed-eyebrow">2027 &middot; Dad Jokes &times; Kansas City</p>
           <h1>Midwest Deadpan</h1>
-          <p class="book-cover-hint"><span class="hint-tap">Turn the page to begin &rarr;</span><span class="hint-touch">Swipe to begin &rarr;</span></p>
+          <button class="book-cover-cta" id="coverStart" type="button"><span class="hint-tap">Turn the page to begin &rarr;</span><span class="hint-touch">Swipe or tap to begin &rarr;</span></button>
         </div>
       </div>
     </div>"""

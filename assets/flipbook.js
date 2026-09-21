@@ -47,6 +47,8 @@
 
   if (prevBtn) prevBtn.addEventListener('click', prev);
   if (nextBtn) nextBtn.addEventListener('click', next);
+  var coverStart = document.getElementById('coverStart');
+  if (coverStart) coverStart.addEventListener('click', function (e) { e.stopPropagation(); next(); });
 
   stage.setAttribute('tabindex', '0');
   stage.addEventListener('click', function (e) {
