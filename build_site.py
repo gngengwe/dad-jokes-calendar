@@ -63,6 +63,7 @@ FOOT = """
 
 HEAD = HEAD.replace("/assets/styles.css", f"/assets/styles.css?v={ASSET_V}")
 FOOT = FOOT.replace("/assets/site.js", f"/assets/site.js?v={ASSET_V}")
+FOOT = FOOT.replace("Calendar.pdf", f"Calendar.pdf?v={ASSET_V}")
 
 
 def build_grid(days, first_weekday):
@@ -344,7 +345,7 @@ def render_archived():
     <h1>The joke leads. Kansas City completes it.</h1>
     <p>Twelve illustrated scenes of ordinary Midwestern life in a slightly illogical Kansas City, where dad-joke logic occasionally becomes physically true. Beautiful first, funny second — every page rewards a second look.</p>
     <a class="cta" href="/{MONTHS[0]['key']}">Start with January &rarr;</a>
-    <a class="cta secondary" href="/assets/Midwest_Deadpan_2027_Calendar.pdf">Download the print-ready PDF</a>
+    <a class="cta secondary" href="/assets/Midwest_Deadpan_2027_Calendar.pdf?v={ASSET_V}">Download the print-ready PDF</a>
   </div>
 </div>
 <p class="year-label">The year &middot; archived view &mdash; <a href="/">see the current flipbook homepage</a></p>
